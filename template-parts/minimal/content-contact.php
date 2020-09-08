@@ -105,7 +105,7 @@ $visible_sections = apply_filters( 'urestaurant_contact_visible_sections', ( get
                             </div>
                             <?php if ( get_field( 'contact-form-shortcode' ) ) : ?>
                                 <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-                                    <?php echo do_shortcode( esc_html( get_field( 'contact-form-shortcode' ) ) ); ?>
+                                    <?php echo do_shortcode( get_field( 'contact-form-shortcode' ) ); ?>
                                 </div>
                             <?php endif; ?>
                         </div>

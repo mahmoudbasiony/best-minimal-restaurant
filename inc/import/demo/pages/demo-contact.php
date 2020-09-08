@@ -73,20 +73,20 @@ function urestaurant_get_contact_default_fields( $template_name ) {
     $custom_fields['field_contact5f1b27528a96d'] = apply_filters('urestaurant_contact_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/contact-breadcrumb.jpg"));
 
     // Register breadcrumb section heading field.
-    $custom_fields['field_contact5f1b277e8a96e'] = apply_filters('urestaurant_contact_demo_breadcrumb_heading', esc_html__('Contact us', 'urestaurant'));
+    $custom_fields['field_contact5f1b277e8a96e'] = apply_filters('urestaurant_contact_demo_breadcrumb_heading', __('Contact us', 'urestaurant'));
 
     // Register contact info section title field.
-    $custom_fields['field_contact5f1b28c98a970'] = apply_filters('urestaurant_contact_demo_contact_info_title', esc_html__('How To Reach Us', 'urestaurant'));
+    $custom_fields['field_contact5f1b28c98a970'] = apply_filters('urestaurant_contact_demo_contact_info_title', __('How To Reach Us', 'urestaurant'));
 
     // Register contact info section contact info group field.
     $custom_fields['field_contact5f1b2a98e3791'] = apply_filters(
         'urestaurant_contact_demo_offer_food_categories',
         array(
-        'phone'          => apply_filters('urestaurant_contact_demo_phone_number', esc_html__('000-000-0000', 'urestaurant')),
+        'phone'          => apply_filters('urestaurant_contact_demo_phone_number', __('000-000-0000', 'urestaurant')),
         'phone-image'    => apply_filters('urestaurant_contact_demo_phone_image', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/phone.png")),
-        'email'          => apply_filters('urestaurant_contact_demo_email', esc_html__('info@info.com', 'urestaurant')),
+        'email'          => apply_filters('urestaurant_contact_demo_email', __('info@info.com', 'urestaurant')),
         'email-image'    => apply_filters('urestaurant_contact_demo_email_image', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/mail.png")),
-        'location'       => apply_filters('urestaurant_contact_demo_location', esc_html__('Lorem ipsum dolor.', 'urestaurant')),
+        'location'       => apply_filters('urestaurant_contact_demo_location', __('Lorem ipsum dolor.', 'urestaurant')),
         'location-image' => apply_filters('urestaurant_contact_demo_location_image', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/map.png")),
         ) 
     );

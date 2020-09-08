@@ -26,7 +26,7 @@ $post_id = wp_insert_post(
     array(
         'post_type'    => 'wpcf7_contact_form',
         'post_status'  => 'publish',
-        'post_title'   => apply_filters('urestaurant_contact_form_7_title', esc_html__('Restaurant Contact Form', 'urestaurant')),
+        'post_title'   => apply_filters('urestaurant_contact_form_7_title', __('Restaurant Contact Form', 'urestaurant')),
         'post_content' => trim($post_content),
     )
 );

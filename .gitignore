@@ -3,7 +3,7 @@ node_modules/
 vendor/
 composer.lock
 package-lock.json
-stylelintrc.json
+*.stylelintrc.json
 *.eslintrc
 
 # Hidden files

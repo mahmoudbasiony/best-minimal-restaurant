@@ -73,16 +73,16 @@ function urestaurant_get_menu_default_fields( $template_name ) {
     $custom_fields['field_menu5f1a0c59c3128'] = apply_filters('urestaurant_menu_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/menu-breadcrumb.jpg"));
 
     // Register breadcrumb section heading field.
-    $custom_fields['field_menu5f1a0c95c3129'] = apply_filters('urestaurant_menu_demo_breadcrumb_heading', esc_html__('Our Menu', 'urestaurant'));
+    $custom_fields['field_menu5f1a0c95c3129'] = apply_filters('urestaurant_menu_demo_breadcrumb_heading', __('Our Menu', 'urestaurant'));
 
     // Register Menu Section Background Image field.
     $custom_fields['field_menu5f1a0d7cc312d'] = apply_filters('urestaurant_menu_demo_menu_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/menu-background.jpg"));
 
     // Register our menu section check menu title field.
-    $custom_fields['field_menu5f1a0cedc312b'] = apply_filters('urestaurant_menu_demo_check_menu_title', esc_html__('Check Our Menu', 'urestaurant'));
+    $custom_fields['field_menu5f1a0cedc312b'] = apply_filters('urestaurant_menu_demo_check_menu_title', __('Check Our Menu', 'urestaurant'));
 
     // Register menu section check menu description field.
-    $custom_fields['field_menu5f1a0d51c312c'] = apply_filters('urestaurant_about_demo_check_menu_description', esc_html__('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nullaDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nullaDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla', 'urestaurant'));
+    $custom_fields['field_menu5f1a0d51c312c'] = apply_filters('urestaurant_about_demo_check_menu_description', __('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nullaDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nullaDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla', 'urestaurant'));
 
     /*
     * Register  menu section best menu shortcode field

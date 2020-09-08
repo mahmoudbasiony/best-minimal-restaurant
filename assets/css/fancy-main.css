@@ -1640,7 +1640,7 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-.Submit_btn {
+.contact_form input[type=submit] {
     background: #a30618;
     font-size: 24px;
     color: #fff;
@@ -1653,11 +1653,16 @@ input[type=number] {
     position: relative;
     font-family: "Nunito",sans-serif;
 }
-.Submit_btn:hover{
+.contact_form input[type=submit]:hover{
     color: #a30618;
     background: #fff;
     border-color: transparent;
 }
+
+.wpcf7-response-output {
+    color: #fff;
+}
+
 /*========================================
             Location page CSS
 =========================================*/

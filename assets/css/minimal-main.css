@@ -1666,6 +1666,9 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+.wpcf7-response-output {
+    color: #fff;
+}
 
 /*========================================
             Location page CSS

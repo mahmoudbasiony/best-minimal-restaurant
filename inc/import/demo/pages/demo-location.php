@@ -71,15 +71,15 @@ function urestaurant_get_location_default_fields( $template_name ) {
     $custom_fields['field_location5f1a1c7680f7d'] = apply_filters('urestaurant_location_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/location-breadcrumb.jpg"));
 
     // Register breadcrumb section heading field.
-    $custom_fields['field_location5f1a1c9880f7e'] = apply_filters('urestaurant_location_demo_breadcrumb_heading', esc_html__('Location', 'urestaurant'));
+    $custom_fields['field_location5f1a1c9880f7e'] = apply_filters('urestaurant_location_demo_breadcrumb_heading', __('Location', 'urestaurant'));
 
     // Register our location section title field.
-    $custom_fields['field_location5f1a1ceb80f80'] = apply_filters('urestaurant_location_demo_our_location_title', esc_html__('Our Location', 'urestaurant'));
+    $custom_fields['field_location5f1a1ceb80f80'] = apply_filters('urestaurant_location_demo_our_location_title', __('Our Location', 'urestaurant'));
 
     // Register our location section address field.
     $custom_fields['field_location5f1a1d2080f81'] = apply_filters(
         'urestaurant_location_demo_our_location_address',
-        esc_html__('123 Elm Street Los Angeles, CA 90210', 'urestaurant')
+        __('123 Elm Street Los Angeles, CA 90210', 'urestaurant')
     );
 
     // Register our location section google map field.

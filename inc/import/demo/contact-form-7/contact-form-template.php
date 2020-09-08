@@ -85,7 +85,7 @@ if (! function_exists('urestaurant_get_demo_mail')) {
             __('From: %s', 'urestaurant'),
             '[your-name] <[your-email]> [your-phone]> [your-address]>' 
         ) . "\n"
-        . esc_html__('Message Body:', 'urestaurant')
+        . __('Message Body:', 'urestaurant')
                     . "\n" . '[message]' . "\n\n"
         . '-- ' . "\n"
         . sprintf(

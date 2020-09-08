@@ -56,7 +56,7 @@ $visible_sections = apply_filters( 'urestaurant_menu_visible_sections', ( get_fi
                     <div class="item_box_wrap">
                         <div class="row">
                             <div class="col-lg-10 offset-lg-1">
-                                <?php echo do_shortcode( esc_html( get_field( 'menu-shortcode' ) ) ); ?>
+                                <?php echo do_shortcode( get_field( 'menu-shortcode' ) ); ?>
                             </div>
                         </div>
                     </div>

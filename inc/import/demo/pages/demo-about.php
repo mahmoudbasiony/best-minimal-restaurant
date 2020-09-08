@@ -73,36 +73,46 @@ function urestaurant_get_about_default_fields( $template_name ) {
     $custom_fields['field_about5f19c223e535d'] = apply_filters('urestaurant_about_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/about-breadcrumb.jpg"));
 
     // Register breadcrumb section heading field.
-    $custom_fields['field_about5f19c267e535e'] = apply_filters('urestaurant_about_demo_breadcrumb_heading', esc_html__('About best restaurants', 'urestaurant'));
+    $custom_fields['field_about5f19c267e535e'] = apply_filters('urestaurant_about_demo_breadcrumb_heading', __('About best restaurants', 'urestaurant'));
 
     // Register about section background image.
     $custom_fields['field_about5f19c2a6e5360'] = apply_filters('urestaurant_about_demo_about_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/about-section.png"));
 
     // Register about section title field.
-    $custom_fields['field_about5f19e39ae5361'] = apply_filters('urestaurant_about_demo_about_title', esc_html__('About best restaurants', 'urestaurant'));
-
-    // Register about section subtitle. For bold, colorful and fancy templates.
-    if ('bold' === $template_name || 'colorful' === $template_name || 'fancy' === $template_name) {
-        $custom_fields['field_about5f4979537be66'] = apply_filters('urestaurant_about_demo_about_subtitle', esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s stan', 'urestaurant'));
-    }
+    $custom_fields['field_about5f19e39ae5361'] = apply_filters('urestaurant_about_demo_about_title', __('About best restaurants', 'urestaurant'));
 
     // Register about section content field.
     $custom_fields['field_about5f19e3cee5362'] = apply_filters(
         'urestaurant_about_demo_about_content',
-        __(
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s stan
-        dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            'urestaurant' 
-        )
+        sprintf(__(
+            'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s stan %s
+            dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+            'urestaurant'
+        ), "\n")
     );
+
+    // Register about section subtitle and content. For bold, colorful and fancy templates.
+    if ('bold' === $template_name || 'colorful' === $template_name || 'fancy' === $template_name) {
+        // Register about section subtitle.
+        $custom_fields['field_about5f4979537be66'] = apply_filters('urestaurant_about_demo_about_subtitle', __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s stan', 'urestaurant'));
+
+        // Register about section content field.
+        $custom_fields['field_about5f19e3cee5362'] = apply_filters(
+            'urestaurant_about_demo_about_content',
+            __(
+                'dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                'urestaurant'
+            )
+        );
+    }
 
     // ٍRegister video section promo video title and content. For bold and fancy templates.
     if ('bold' === $template_name || 'fancy' === $template_name) {
         // Promo title.
-        $custom_fields['field_about5f497c5bcd95b'] = apply_filters('urestaurant_about_demo_video_title', esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s stan', 'urestaurant'));
+        $custom_fields['field_about5f497c5bcd95b'] = apply_filters('urestaurant_about_demo_video_title', __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s stan', 'urestaurant'));
 
         // Promo content.
-        $custom_fields['field_about5f497ec8fa1e7'] = apply_filters('urestaurant_about_demo_video_content', esc_html__('dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,', 'urestaurant'));
+        $custom_fields['field_about5f497ec8fa1e7'] = apply_filters('urestaurant_about_demo_video_content', __('dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,', 'urestaurant'));
     }
 
     // Register video section background image.
@@ -116,10 +126,10 @@ function urestaurant_get_about_default_fields( $template_name ) {
     */
     if ('minimal' === $template_name || 'colorful' === $template_name) {
         // Register about2 section title field.
-        $custom_fields['field_about5f1a0975acc17'] = apply_filters('urestaurant_about_demo_about2_title', esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s stan', 'urestaurant'));
+        $custom_fields['field_about5f1a0975acc17'] = apply_filters('urestaurant_about_demo_about2_title', __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s stan', 'urestaurant'));
 
         // Register about2 section content field.
-        $custom_fields['field_about5f1a099eacc18'] = apply_filters('urestaurant_about_demo_about2_content', esc_html__('dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'urestaurant'));
+        $custom_fields['field_about5f1a099eacc18'] = apply_filters('urestaurant_about_demo_about2_content', __('dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'urestaurant'));
 
         // Register about2 section background image.
         $custom_fields['field_about5f1a0964acc16'] = apply_filters('urestaurant_about_demo_about2_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/about2-section.png"));

@@ -96,8 +96,8 @@ if (! class_exists('URESTAURANT_Import_Demo')) :
                 'urestaurant_import_page_setup',
                 array(
                     'parent_slug' => 'themes.php',
-                    'page_title'  => esc_html__('Demo Import', 'urestaurant'),
-                    'menu_title'  => esc_html__('Import Demo', 'urestaurant'),
+                    'page_title'  => __('Demo Import', 'urestaurant'),
+                    'menu_title'  => __('Import Demo', 'urestaurant'),
                     'capability'  => 'import',
                     'menu_slug'   => 'urestaurant-demo-import',
                 ) 
@@ -148,10 +148,10 @@ if (! class_exists('URESTAURANT_Import_Demo')) :
                         'ajax_url'         => admin_url('admin-ajax.php'),
                         'ajax_nonce'       => wp_create_nonce('urestaurant-ajax-verification'),
                         'texts'            => array(
-                            'dialog_title' => esc_html__('Are you sure?', 'urestaurant'),
+                            'dialog_title' => __('Are you sure?', 'urestaurant'),
                             'dialog_text'  => __('You won\'t be able to revert this!', 'urestaurant'),
-                            'dialog_no'    => esc_html__('Cancel', 'urestaurant'),
-                            'dialog_yes'   => esc_html__('Yes, import!', 'urestaurant'),
+                            'dialog_no'    => __('Cancel', 'urestaurant'),
+                            'dialog_yes'   => __('Yes, import!', 'urestaurant'),
                         ),
                     )
                 );
@@ -177,7 +177,7 @@ if (! class_exists('URESTAURANT_Import_Demo')) :
                 $is_demo_imported = get_option('urestaurant_is_demo_imported');
                 if (isset($is_demo_imported) && 'yes' === $is_demo_imported) {
                     $response['status']  = 509;
-                    $response['message'] = esc_html__('Demo content is imported already!', 'urestaurant');
+                    $response['message'] = __('Demo content is imported already!', 'urestaurant');
 
                     // Send response and die.
                     wp_send_json($response);
@@ -185,7 +185,7 @@ if (! class_exists('URESTAURANT_Import_Demo')) :
 
                 if (include_once URESTAURANT_INC_DIR . 'import/import.php') {
                     $response['status']  = 200;
-                    $response['message'] = esc_html__('Demo imported successfully!', 'urestaurant');
+                    $response['message'] = __('Demo imported successfully!', 'urestaurant');
 
                     // Send response and die.
                     wp_send_json($response);
@@ -193,7 +193,7 @@ if (! class_exists('URESTAURANT_Import_Demo')) :
             }
 
             $response['status']  = 500;
-            $response['message'] = esc_html__('Something went wrong!', 'urestaurant'); 
+            $response['message'] = __('Something went wrong!', 'urestaurant'); 
             wp_send_json_error($response);
         }
 

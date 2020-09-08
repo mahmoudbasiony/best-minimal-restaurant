@@ -694,7 +694,7 @@ a:hover {
     opacity: 0;
 }
 
-.site-navbar .site-navigation .site-menu li>a.active:after,
+.site-navbar .site-navigation .site-menu li.active>a:after,
 .site-navbar .site-navigation .site-menu li>a:hover:after {
     width: 100%;
     visibility: visible;
@@ -1610,7 +1610,7 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-.submit_btn {
+.contact_form input[type=submit] {
     background: #fff;
     color: #F17C05;
     border: 3px solid transparent;
@@ -1620,10 +1620,9 @@ input[type=number] {
     border-radius: 50px;
     line-height: 1;
     transition: 0.3s;
-
 }
 
-.submit_btn:hover {
+.contact_form input[type=submit]:hover {
     color: #fff;
     background: #F17C05;
     border-color: #fff;
