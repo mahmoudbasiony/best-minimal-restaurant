@@ -1,0 +1,58 @@
+/**
+ * Demo page styles.
+ **/
+
+.urestaurant_demo_page {
+    margin-top: 40px;
+    padding: 15px 0 15px 25px;
+    background-color: #fff;
+    width: 750px;
+}
+
+.urestaurant__demo-template {
+    font-size: 1.3em;
+}
+
+.urestaurant__demo-template span.urestaurant__template-name {
+    margin: 0 2px;
+    padding: 3px 8px;
+    color: #fff;
+    background-color: #000000;
+    border-radius: 3px;
+}
+
+.urestaurant__button-container {
+    margin-top: 1.62em;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* AJAX loader */
+p.urestaurant__ajax-loader {
+    font-size: 1.5em;
+    display: none;
+}
+
+.urestaurant__ajax-loader .spinner {
+    display: inline-block;
+    float: none;
+    visibility: visible;
+    margin-bottom: 6px;
+}
+
+.spinner {
+    background: url(../../img/spinner.gif) no-repeat;
+    background-size: 20px 20px;
+    display: inline-block;
+    visibility: hidden;
+    float: right;
+    vertical-align: middle;
+    opacity: .7;
+    width: 20px;
+    height: 20px;
+    margin: 4px 10px 0
+}
+
+.loading-content .spinner,.spinner.is-active {
+    visibility: visible
+}
