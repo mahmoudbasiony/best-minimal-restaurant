@@ -54,7 +54,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'conditional_logic' => array(
                         array(
                             array(
-                                'field'    => 'field_5f1bbca489ad6',
+                                'field'    => 'field_home5f1bbca489ad6',
                                 'operator' => '==',
                                 'value'    => 'hero',
                             ),
@@ -141,7 +141,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'conditional_logic' => array(
                         array(
                             array(
-                                'field'    => 'field_5f1bbca489ad6',
+                                'field'    => 'field_home5f1bbca489ad6',
                                 'operator' => '==',
                                 'value'    => 'about',
                             ),
@@ -283,7 +283,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'conditional_logic' => array(
                         array(
                             array(
-                                'field'    => 'field_5f1bbca489ad6',
+                                'field'    => 'field_home5f1bbca489ad6',
                                 'operator' => '==',
                                 'value'    => 'feature',
                             ),
@@ -404,7 +404,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'conditional_logic' => array(
                         array(
                             array(
-                                'field'    => 'field_5f1bbca489ad6',
+                                'field'    => 'field_home5f1bbca489ad6',
                                 'operator' => '==',
                                 'value'    => 'offer',
                             ),

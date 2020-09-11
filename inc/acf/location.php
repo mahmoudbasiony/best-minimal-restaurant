@@ -49,7 +49,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'conditional_logic' => array(
                         array(
                             array(
-                                'field'    => 'field_5f1bd80865fa8',
+                                'field'    => 'field_location5f1bd80865fa8',
                                 'operator' => '==',
                                 'value'    => 'breadcrumb',
                             ),
@@ -116,7 +116,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'conditional_logic' => array(
                         array(
                             array(
-                                'field'    => 'field_5f1bd80865fa8',
+                                'field'    => 'field_location5f1bd80865fa8',
                                 'operator' => '==',
                                 'value'    => 'our-location',
                             ),
