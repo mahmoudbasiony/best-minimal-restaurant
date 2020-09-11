@@ -53,10 +53,10 @@ if (! function_exists('urestaurant_setup')) :
      * Note that this function is hooked into the after_setup_theme hook, which
      * runs before the init hook. The init hook is too late for some features, such
      * as indicating support for post thumbnails.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return void
+     *
+     * @since 1.0.0
+     *
+     * @return void
      */
     function urestaurant_setup() {
         /*
@@ -231,4 +231,46 @@ function urestaurant_google_map_api( $api ) {
 }
 
 add_filter('acf/fields/google_map/api', 'urestaurant_google_map_api');
+
+/**
+ * Hide some acf custom fields for certain templates.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function urestaurant_acf_conditional_fields() {
+    $template_name = urestaurant_get_active_theme_template();
+    ?>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            var template = "<?php echo $template_name ?>";
+            // Hide home about subtitle field for minimal and colorful template.
+            if('minimal'===template || 'colorful'===template){
+                jQuery('.acf-field-home5f4bc27e5f2a4').hide();
+            }
+
+            // Hide about about subtitle field for minimal template.
+            if('minimal'===template){
+                jQuery('.acf-field-about5f4979537be66').hide();
+            }
+
+            // Hide about promo video title and content. for minimal and colorful templates.
+            if('minimal'===template || 'colorful'===template){
+                jQuery('.acf-field-about5f497c5bcd95b').hide();
+                jQuery('.acf-field-about5f497ec8fa1e7').hide();
+            }
+
+            // Hide about about2 section. for bold and fancy templates.
+            if('bold'===template || 'fancy'===template){
+                jQuery('.acf-field-about5f1a0975acc17').hide();
+                jQuery('.acf-field-about5f1a099eacc18').hide();
+                jQuery('.acf-field-about5f1a0964acc16').hide();
+            }
+        });
+    </script>
+    <?php
+}
+
+add_action('acf/input/admin_head', 'urestaurant_acf_conditional_fields');
 

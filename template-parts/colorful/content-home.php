@@ -80,7 +80,7 @@ $visible_sections = apply_filters( 'urestaurant_home_visible_sections', ( get_fi
                                 <p><?php esc_html( the_field( 'content-feature' ) ); ?></p>
                             <?php endif; ?>
                             <?php if ( get_field( 'button-text-feature' ) ) : ?>
-                                <a href="<?php get_field( 'button-link-feature' ) ? esc_attr( the_field( 'button-link-feature' ) ) : ''; ?>" class="btn v2"><?php esc_html( the_field( 'button-text-feature' ) ); ?></a>
+                                <a href="<?php get_field( 'button-link-feature' ) ? esc_attr( the_field( 'button-link-feature' ) ) : ''; ?>" class="btn v4"><?php esc_html( the_field( 'button-text-feature' ) ); ?></a>
                             <?php endif; ?>
                         </div>
                     </div>

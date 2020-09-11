@@ -1289,6 +1289,10 @@ a:hover {
     margin: 40px 0 0;
 }
 
+.item_box_wrap .brm-menu {
+    max-width: inherit;
+}
+
 .item_header.v4 {
     position: relative;
     text-align: center;

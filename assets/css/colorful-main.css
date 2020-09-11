@@ -1283,6 +1283,10 @@ a:hover {
     margin: 40px 0 0;
 }
 
+.item_box_wrap .brm-menu {
+    max-width: inherit;
+}
+
 .item_header.v2 {
     color: #fff;
     text-align: center;

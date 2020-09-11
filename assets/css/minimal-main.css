@@ -1316,6 +1316,10 @@ a:hover {
     margin: 140px 0 0;
 }
 
+.item_box_wrap .brm-menu {
+    max-width: inherit;
+}
+
 .item_header.v1 {
     background: #000;
     color: #fff;

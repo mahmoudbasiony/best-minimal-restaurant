@@ -1192,6 +1192,10 @@ a:hover {
     margin: 40px 0 0;
 }
 
+.item_box_wrap .brm-menu {
+    max-width: inherit;
+}
+
 .item_title_img {
     text-align: center;
 }
