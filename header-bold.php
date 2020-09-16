@@ -10,7 +10,7 @@
  * @author  PriceListo
  */
 
-global $active_template;
+global $ultimate_restaurant_settings, $active_template;
 $active_template = urestaurant_get_active_theme_template();
 ?>
 
@@ -19,7 +19,7 @@ $active_template = urestaurant_get_active_theme_template();
 <head>
 
     <!--====== Required meta tags ======-->
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Restaurant Template">
     <meta name="keywords" content="Restaurant,food">
@@ -27,7 +27,7 @@ $active_template = urestaurant_get_active_theme_template();
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <!--====== Title ======-->
-    <title><?php wp_title( '' ); ?></title>
+    <title><?php wp_title(''); ?></title>
 
     <?php wp_head(); ?>
 </head>
@@ -68,7 +68,7 @@ $active_template = urestaurant_get_active_theme_template();
                         <nav class="navbar navbar-expand-md">
                             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                                 <?php
-                                if ( has_nav_menu( 'urestaurant_top_left_menu' ) ) {
+                                if (has_nav_menu('urestaurant_top_left_menu')) {
                                     wp_nav_menu(
                                         array(
                                             'theme_location' => 'urestaurant_top_left_menu',
@@ -81,11 +81,11 @@ $active_template = urestaurant_get_active_theme_template();
                             </div>
             
                             <div class="menu_wrapper order-0">
-                                <?php if ( has_custom_logo() ) : ?>
+                                <?php if (has_custom_logo()) : ?>
                                     <?php the_custom_logo(); ?>
                                 <?php else : ?>
-                                    <a class="navbar-brand mx-auto" href="<?php bloginfo( 'url' ); ?>">
-                                        <h1><?php bloginfo( 'name' ); ?></h1>
+                                    <a class="navbar-brand mx-auto" href="<?php esc_url(bloginfo('url')); ?>">
+                                        <h1><?php esc_html(bloginfo('name')); ?></h1>
                                     </a>
                                 <?php endif; ?>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
@@ -95,7 +95,7 @@ $active_template = urestaurant_get_active_theme_template();
 
                             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                                 <?php
-                                if ( has_nav_menu( 'urestaurant_top_right_menu' ) ) {
+                                if (has_nav_menu('urestaurant_top_right_menu')) {
                                     wp_nav_menu(
                                         array(
                                             'theme_location' => 'urestaurant_top_right_menu',
@@ -105,6 +105,12 @@ $active_template = urestaurant_get_active_theme_template();
                                     );
                                 }
                                 ?>
+                                <!-- Reservation Button -->
+                                <?php if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['reservation-button-url']) && !empty($ultimate_restaurant_settings['reservation-button-url'])) : ?>
+                                    <div class="nav-item">
+                                        <button class="btn v7" onclick="window.location.href='<?php echo esc_url($ultimate_restaurant_settings['reservation-button-url']); ?>'"><?php echo esc_html($ultimate_restaurant_settings['reservation-button-text']); ?></button>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </nav>
                     </div>

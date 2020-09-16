@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-09-08T18:42:42+00:00\n"
+"POT-Creation-Date: 2020-09-16T02:19:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: urestaurant\n"
@@ -76,10 +76,9 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: header-fancy.php:108
-#: header-fancy.php:114
-#: header-minimal.php:108
-#: header-minimal.php:114
+#: header.php:109
+#: header.php:117
+#: inc/framework/theme-options.php:245
 msgid "Reservation"
 msgstr ""
 
@@ -104,51 +103,83 @@ msgstr ""
 msgid "Header"
 msgstr ""
 
-#: inc/framework/theme-options.php:198
+#: inc/framework/theme-options.php:203
+msgid "Logo"
+msgstr ""
+
+#: inc/framework/theme-options.php:211
 msgid "Logo Max Width(px)"
 msgstr ""
 
-#: inc/framework/theme-options.php:207
+#: inc/framework/theme-options.php:220
 msgid "Logo Max Height(px)"
 msgstr ""
 
-#: inc/framework/theme-options.php:223
+#: inc/framework/theme-options.php:236
+msgid "Reservation Button"
+msgstr ""
+
+#: inc/framework/theme-options.php:244
+msgid "Reservation Button Text"
+msgstr ""
+
+#: inc/framework/theme-options.php:250
+msgid "Reservation Button Link"
+msgstr ""
+
+#: inc/framework/theme-options.php:251
+msgid "Leave it empty to hide."
+msgstr ""
+
+#: inc/framework/theme-options.php:264
 msgid "Social Icons"
 msgstr ""
 
-#: inc/framework/theme-options.php:230
+#: inc/framework/theme-options.php:271
 msgid "Facebook"
 msgstr ""
 
-#: inc/framework/theme-options.php:236
+#: inc/framework/theme-options.php:277
 msgid "Twitter"
 msgstr ""
 
-#: inc/framework/theme-options.php:242
+#: inc/framework/theme-options.php:283
 msgid "Instagram"
 msgstr ""
 
-#: inc/framework/theme-options.php:255
+#: inc/framework/theme-options.php:296
+msgid "Google Map"
+msgstr ""
+
+#: inc/framework/theme-options.php:303
+msgid "API Key"
+msgstr ""
+
+#: inc/framework/theme-options.php:304
+msgid "Enter the google map api key."
+msgstr ""
+
+#: inc/framework/theme-options.php:317
 msgid "Call To Action"
 msgstr ""
 
-#: inc/framework/theme-options.php:258
+#: inc/framework/theme-options.php:320
 msgid "Call to Action section displayed for all pages!"
 msgstr ""
 
-#: inc/framework/theme-options.php:263
+#: inc/framework/theme-options.php:325
 msgid "Open/Start Time"
 msgstr ""
 
-#: inc/framework/theme-options.php:269
+#: inc/framework/theme-options.php:331
 msgid "End Time"
 msgstr ""
 
-#: inc/framework/theme-options.php:275
+#: inc/framework/theme-options.php:337
 msgid "Large Group Reservation Text"
 msgstr ""
 
-#: inc/framework/theme-options.php:281
+#: inc/framework/theme-options.php:343
 #: inc/import/demo/contact-form-7/contact-form-template.php:51
 #: template-parts/bold/section-call-to-action.php:34
 #: template-parts/colorful/section-call-to-action.php:40
@@ -157,7 +188,7 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: inc/framework/theme-options.php:287
+#: inc/framework/theme-options.php:349
 #: inc/import/demo/contact-form-7/contact-form-template.php:50
 #: template-parts/bold/section-call-to-action.php:40
 #: template-parts/colorful/section-call-to-action.php:46
@@ -166,19 +197,19 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: inc/framework/theme-options.php:306
+#: inc/framework/theme-options.php:368
 msgid "CTA Section Background"
 msgstr ""
 
-#: inc/framework/theme-options.php:307
+#: inc/framework/theme-options.php:369
 msgid "Uplaod the background image for Call to action section in all pages"
 msgstr ""
 
-#: inc/framework/theme-options.php:319
+#: inc/framework/theme-options.php:381
 msgid "Footer"
 msgstr ""
 
-#: inc/framework/theme-options.php:326
+#: inc/framework/theme-options.php:388
 msgid "Displays footer social icons"
 msgstr ""
 
@@ -234,24 +265,26 @@ msgstr ""
 msgid "About best restaurants"
 msgstr ""
 
-#: inc/import/demo/pages/demo-about.php:86
-#: inc/import/demo/pages/demo-about.php:102
-#: inc/import/demo/pages/demo-about.php:119
+#: inc/import/demo/pages/demo-about.php:87
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's stan %s\n"
+"            dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+msgstr ""
+
+#: inc/import/demo/pages/demo-about.php:97
+#: inc/import/demo/pages/demo-about.php:112
+#: inc/import/demo/pages/demo-about.php:129
+#: inc/import/demo/pages/demo-home.php:81
 msgid "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's stan"
 msgstr ""
 
-#: inc/import/demo/pages/demo-about.php:92
-msgid ""
-"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's stan\n"
-"        dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-msgstr ""
-
-#: inc/import/demo/pages/demo-about.php:105
-msgid "dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"
-msgstr ""
-
-#: inc/import/demo/pages/demo-about.php:122
+#: inc/import/demo/pages/demo-about.php:102
+#: inc/import/demo/pages/demo-about.php:132
 msgid "dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+msgstr ""
+
+#: inc/import/demo/pages/demo-about.php:115
+msgid "dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"
 msgstr ""
 
 #: inc/import/demo/pages/demo-contact.php:76
@@ -276,6 +309,65 @@ msgstr ""
 
 #: inc/import/demo/pages/demo-contact.php:89
 msgid "Lorem ipsum dolor."
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:78
+msgid "We serve quality food"
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:87
+msgid "Who we are"
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:92
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\\'s stan %s\n"
+"            dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took."
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:101
+msgid "Lorem Ipsum is simply dummy text of the printing and type. Lorem Ipsum has been the industry's stan"
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:106
+msgid "dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type."
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:114
+msgid "Read More"
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:123
+msgid "Our Food"
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:126
+#: inc/import/demo/pages/demo-home.php:138
+msgid "dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, e the 1500s,"
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:129
+msgid "See Menu"
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:135
+msgid "What We Offer"
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:144
+msgid "Italian Cousine"
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:147
+msgid "Sea Food"
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:150
+msgid "Snacks"
+msgstr ""
+
+#: inc/import/demo/pages/demo-home.php:153
+msgid "Continental Dish"
 msgstr ""
 
 #: inc/import/demo/pages/demo-location.php:74

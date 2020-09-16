@@ -224,8 +224,13 @@ if (defined('JETPACK__VERSION')) {
  * @return array $api
  */
 function urestaurant_google_map_api( $api ) {
-    // The google map api key.
-    $api['key'] = 'AIzaSyA_m4ghyYVrEybzZ2CvBiLOg3NktqQeBi0';
+    // Get google maps api key.
+    $google_map_api_key = urestaurant_get_google_map_api_key();
+
+    if(isset($google_map_api_key)) {
+        // Set the google map api key for acf map.
+        $api['key'] = $google_map_api_key;
+    }
 
     return $api;
 }

@@ -10,7 +10,7 @@
  * @author  PriceListo
  */
 
-global $active_template;
+global $ultimate_restaurant_settings, $active_template;
 $active_template = urestaurant_get_active_theme_template();
 ?>
 
@@ -65,12 +65,12 @@ $active_template = urestaurant_get_active_theme_template();
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-5 col-8">
                         <div class="logo">
-                            <?php if ( has_custom_logo() ) : ?>
+                            <?php if (has_custom_logo()) : ?>
                                 <?php the_custom_logo(); ?>
                             <?php else : ?>
                                 <h1>
-                                    <a class="text_ph" href="<?php esc_url( bloginfo( 'url' ) ); ?>">
-                                        <?php esc_html( bloginfo( 'name' ) ); ?>
+                                    <a class="text_ph" href="<?php esc_url(bloginfo('url')); ?>">
+                                        <?php esc_html(bloginfo('name')); ?>
                                     </a>
                                 </h1>
                             <?php endif; ?>
@@ -80,7 +80,7 @@ $active_template = urestaurant_get_active_theme_template();
                         <div class="site-navbar">
                             <nav class="site-navigation">
                                 <?php
-                                if ( has_nav_menu( 'urestaurant_main_menu' ) ) {
+                                if (has_nav_menu( 'urestaurant_main_menu' )) {
                                     wp_nav_menu(
                                         array(
                                             'theme_location' => 'urestaurant_main_menu',
@@ -103,16 +103,20 @@ $active_template = urestaurant_get_active_theme_template();
                                         <i class="ion-ios-close-empty"></i>
                                     </div>
                                 </div>
-                                <div class="site-mobile-menu-body">
-                                    <div class="header_btn">
-                                        <a href="#" class="btn v4"><?php esc_html_e( 'Reservation', 'urestaurant' ); ?></a>
+                                <?php if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['reservation-button-url']) && !empty($ultimate_restaurant_settings['reservation-button-url'])) : ?>
+                                    <div class="site-mobile-menu-body">
+                                        <div class="header_btn">
+                                            <a href="<?php echo esc_url($ultimate_restaurant_settings['reservation-button-url']); ?>" class="btn v4"><?php echo esc_html($ultimate_restaurant_settings['reservation-button-text']); ?></a>
+                                        </div>
                                     </div>
-                                </div>
+                                <?php endif; ?>
                             </div>
                             <!--mobile-menu ends-->
-                            <div class="header_btn md-none">
-                                <a href="#" class="btn v4"><?php esc_html_e( 'Reservation', 'urestaurant' ); ?></a>
-                            </div>
+                            <?php if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['reservation-button-url']) && !empty($ultimate_restaurant_settings['reservation-button-url'])) : ?>
+                                <div class="header_btn md-none">
+                                    <a href="<?php echo esc_url($ultimate_restaurant_settings['reservation-button-url']); ?>" class="btn v4"><?php echo esc_html($ultimate_restaurant_settings['reservation-button-text']); ?></a>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

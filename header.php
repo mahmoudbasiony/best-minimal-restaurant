@@ -10,7 +10,7 @@
  * @author  PriceListo
  */
 
-global $active_template;
+global $ultimate_restaurant_settings, $active_template;
 $active_template = urestaurant_get_active_theme_template();
 ?>
 
@@ -103,16 +103,20 @@ $active_template = urestaurant_get_active_theme_template();
                                         <i class="ion-ios-close-empty"></i>
                                     </div>
                                 </div>
-                                <div class="site-mobile-menu-body">
-                                    <div class="header_btn">
-                                        <a href="#" class="btn <?php echo esc_attr( $active_template ); ?>">Reservation</a>
+                                <?php if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['reservation-button-url']) && !empty($ultimate_restaurant_settings['reservation-button-url'])) : ?>
+                                    <div class="site-mobile-menu-body">
+                                        <div class="header_btn">
+                                            <a href="<?php echo esc_url($ultimate_restaurant_settings['reservation-button-url']); ?>" class="btn <?php echo esc_attr($active_template); ?>"><?php echo !empty($ultimate_restaurant_settings['reservation-button-text']) ? esc_html($ultimate_restaurant_settings['reservation-button-text']) : esc_html__('Reservation', 'urestaurant'); ?></a>
+                                        </div>
                                     </div>
-                                </div>
+                                <?php endif; ?>
                             </div>
                             <!--mobile-menu ends-->
-                            <div class="header_btn md-none">
-                                <a href="#" class="btn <?php echo esc_attr( $active_template ); ?>">Reservation</a>
-                            </div>
+                            <?php if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['reservation-button-url']) && !empty($ultimate_restaurant_settings['reservation-button-url'])) : ?>
+                                <div class="header_btn md-none">
+                                    <a href="<?php echo esc_url($ultimate_restaurant_settings['reservation-button-url']); ?>" class="btn <?php echo esc_attr($active_template); ?>"><?php echo !empty($ultimate_restaurant_settings['reservation-button-text']) ? esc_html($ultimate_restaurant_settings['reservation-button-text']) : esc_html__('Reservation', 'urestaurant'); ?></a>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

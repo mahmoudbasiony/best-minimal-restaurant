@@ -190,7 +190,20 @@ Redux::setSection(
     array(
         'title'            => esc_html__( 'Header', 'urestaurant' ),
         'id'               => 'header',
+        'customizer_width' => '500px',
+    )
+);
+
+/*********************************
+ *          LOGO - SUBSECTION
+*/
+Redux::setSection(
+    $opt_name,
+    array(
+        'title'            => esc_html__( 'Logo', 'urestaurant' ),
+        'id'               => 'logo',
         'customizer_width' => '400px',
+        'subsection'       => true,
         'fields'           => array(
             array(
                 'id'            => 'logo-max-width',
@@ -209,6 +222,34 @@ Redux::setSection(
                 'min'           => 10,
                 'step'          => 5,
                 'max'           => 140,
+            ),
+        ),
+    )
+);
+
+/*********************************
+ *          RESERVATION BUTTON - SUBSECTION
+*/
+Redux::setSection(
+    $opt_name,
+    array(
+        'title'            => esc_html__( 'Reservation Button', 'urestaurant' ),
+        'id'               => 'reservation-button',
+        'customizer_width' => '400px',
+        'subsection'       => true,
+        'fields'           => array(
+            array(
+                'id'            => 'reservation-button-text',
+                'type'          => 'text',
+                'title'         => esc_html__( 'Reservation Button Text', 'urestaurant' ),
+                'default'       => esc_html__( 'Reservation', 'urestaurant' ),
+            ),
+            array(
+                'id'            => 'reservation-button-url',
+                'type'          => 'text',
+                'title'         => esc_html__( 'Reservation Button Link', 'urestaurant' ),
+                'desc'          => esc_html__( 'Leave it empty to hide.', 'urestaurant' ),
+                'default'       => '#',
             ),
         ),
     )
@@ -241,6 +282,27 @@ Redux::setSection(
                 'type'     => 'text',
                 'title'    => esc_html__( 'Instagram', 'urestaurant' ),
                 'default'  => '',
+            ),
+        ),
+    )
+);
+
+/*********************************
+ *          GOOGLE MAP
+*/
+Redux::setSection(
+    $opt_name,
+    array(
+        'title'            => esc_html__( 'Google Map', 'urestaurant' ),
+        'id'               => 'google-map',
+        'customizer_width' => '400px',
+        'fields'           => array(
+            array(
+                'id'            => 'google-map-api-key',
+                'type'          => 'text',
+                'title'         => esc_html__( 'API Key', 'urestaurant' ),
+                'desc'          => esc_html__( 'Enter the google map api key.', 'urestaurant' ),
+                'default'       => '',
             ),
         ),
     )

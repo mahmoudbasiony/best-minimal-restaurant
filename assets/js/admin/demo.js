@@ -24,7 +24,7 @@
         }).then((result) => {
             if (result.value) {
                 // Send import ajax.
-                ajaxCall( data );
+                ajaxCall(data);
             }
         })
     });
@@ -34,7 +34,7 @@
      *
      * @param data data The data to be passed to the AJAX call.
      */
-    function ajaxCall( data ) {
+    function ajaxCall(data) {
         $.ajax({
             url : urestaurantDemo.ajax_url,
             data : data,

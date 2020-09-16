@@ -973,8 +973,9 @@
         margin-top: 35px;
     }
 
-    .nav-item a {
+    .nav-item {
         margin-bottom: 10px;
+        text-align: center;
     }
 
 

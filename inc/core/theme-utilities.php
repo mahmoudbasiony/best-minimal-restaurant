@@ -16,7 +16,7 @@ if (! function_exists('urestaurant_get_active_theme_template')) {
      */
     function urestaurant_get_active_theme_template() {
         global $ultimate_restaurant_settings;
-    
+
         $active_template = 'minimal';
     
         if (isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['ultimate-restaurant-theme']) && ! empty($ultimate_restaurant_settings['ultimate-restaurant-theme'])) {
@@ -185,5 +185,25 @@ if (! function_exists('urestaurant_get_demo_contact_form_7_shortcode')) {
         }
 
         return $shortcode;
+    }
+}
+
+if (! function_exists('urestaurant_get_google_map_api_key')) {
+    /**
+     * Get google map api key.
+     *
+     * @since 1.0.0
+     *
+     * @return string $api_key
+     */
+    function urestaurant_get_google_map_api_key() {
+        global $ultimate_restaurant_settings;
+        $api_key = null;
+
+        if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['google-map-api-key'])) {
+            $api_key = $ultimate_restaurant_settings['google-map-api-key'];
+        }
+
+        return $api_key;
     }
 }

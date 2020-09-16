@@ -42,6 +42,19 @@ if (! function_exists( 'urestaurant_get_header' )) {
     }
 }
 
+if (! function_exists( 'urestaurant_get_footer' )) {
+    /**
+     * Displays site footer.
+     *
+     * @since 1.0.0
+     *
+     * @return mixed|HTML
+     */
+    function urestaurant_get_footer() {
+        get_footer();
+    }
+}
+
 /**
  * Adds custom classes to the array of body classes.
  *

@@ -1571,6 +1571,26 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+.form_wrapper .btn {
+    background: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 28px;
+    border: 3px solid transparent;
+    border-radius: 0;
+    padding: 20px 80px 20px;
+    transition: 0.4s;
+    position: relative;
+    color: #E3350A;
+}
+
+.form_wrapper .btn:hover{
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
 .wpcf7-response-output {
     font-size: 20px;
     font-weight: bold;

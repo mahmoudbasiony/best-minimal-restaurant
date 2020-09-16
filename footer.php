@@ -43,7 +43,7 @@ global $ultimate_restaurant_settings, $active_template;
                                     ?>
                                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html( bloginfo( 'name' ) ); ?></a>
                                     <?php esc_html_e( ' | Powered by ', 'ultimate-restaurant' ); ?>
-                                    <a href="<?php echo esc_url( 'https://pricelisto.com/', 'ultimate-restaurant' ); ?>">
+                                    <a href="<?php echo esc_url( 'https://www.pricelisto.com/', 'ultimate-restaurant' ); ?>">
                                         <?php esc_html_e( 'PriceListo', 'ultimate-restaurant' ); ?>
                                     </a>
                                 </p><!-- .footer-copyright -->

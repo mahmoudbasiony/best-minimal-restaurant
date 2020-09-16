@@ -50,4 +50,4 @@ urestaurant_get_header();
     </main><!-- #main -->
 
 <?php
-get_footer();
+urestaurant_get_footer();

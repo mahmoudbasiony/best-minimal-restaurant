@@ -20,7 +20,13 @@ function urestaurant_global_theme_js() {
     // Get current theme version.
     $theme_version = URESTAURANT_THEME_VERSION;
 
-    wp_enqueue_script('google-map-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA_m4ghyYVrEybzZ2CvBiLOg3NktqQeBi0', array(), '', false);
+    // Get google maps api key.
+    $google_map_api_key = urestaurant_get_google_map_api_key();
+
+    if(isset($google_map_api_key)) {
+        wp_enqueue_script("google-map-api", "https://maps.googleapis.com/maps/api/js?key={$google_map_api_key}", array(), '', false);
+    }
+
     wp_enqueue_script('bootstrap', $dir . 'third/bootstrap.min.js', array('jquery'), $theme_version, true);
     wp_enqueue_script('easing', $dir . 'third/jquery.easing.min.js', array('jquery'), $theme_version, true);
     wp_enqueue_script('nice-select', $dir . 'third/jquery-nice-select.js', array('jquery'), $theme_version, true);

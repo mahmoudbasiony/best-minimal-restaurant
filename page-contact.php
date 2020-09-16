@@ -169,4 +169,4 @@
     </script>
 
     <!---- Footer ---->
-    <?php get_footer(); ?>
+    <?php urestaurant_get_footer(); ?>
