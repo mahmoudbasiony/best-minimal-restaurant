@@ -10,7 +10,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called Ultimate Restaurant.
+A 4-in-1 restaurant theme called Ultimate Restaurant.
 
 == Description ==
 
@@ -21,6 +21,9 @@ Description
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
+4. Go to Theme Options -> General, and select Theme.
+5. Then go to Appearance -> Import Demo and click on Import Demo button.
+6. Now you are ready to customize your theme style and content.
 
 == Changelog ==
 
