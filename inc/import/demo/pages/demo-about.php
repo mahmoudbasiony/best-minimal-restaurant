@@ -70,13 +70,13 @@ function urestaurant_get_about_default_fields( $template_name ) {
     );
 
     // Register Breadcrumb Background Image field.
-    $custom_fields['field_about5f19c223e535d'] = apply_filters('urestaurant_about_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/about-breadcrumb.jpg"));
+    $custom_fields['field_about5f19c223e535d'] = apply_filters('urestaurant_about_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/about-breadcrumb.jpg"));
 
     // Register breadcrumb section heading field.
     $custom_fields['field_about5f19c267e535e'] = apply_filters('urestaurant_about_demo_breadcrumb_heading', __('About best restaurants', 'urestaurant'));
 
     // Register about section background image.
-    $custom_fields['field_about5f19c2a6e5360'] = apply_filters('urestaurant_about_demo_about_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/about-section.png"));
+    $custom_fields['field_about5f19c2a6e5360'] = apply_filters('urestaurant_about_demo_about_background_image_id', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/about-section.png"));
 
     // Register about section title field.
     $custom_fields['field_about5f19e39ae5361'] = apply_filters('urestaurant_about_demo_about_title', __('About best restaurants', 'urestaurant'));
@@ -116,7 +116,7 @@ function urestaurant_get_about_default_fields( $template_name ) {
     }
 
     // Register video section background image.
-    $custom_fields['field_about5f19e86ce5365'] = apply_filters('urestaurant_about_demo_video_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/about-video.jpg"));
+    $custom_fields['field_about5f19e86ce5365'] = apply_filters('urestaurant_about_demo_video_background_image_id', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/about-video.jpg"));
 
     // Register video section promo video oembed field.
     $custom_fields['field_about5f19e434e5364'] = apply_filters('urestaurant_about_demo_promo_video_oembed', 'https://www.youtube.com/watch?v=AC9EfT-y9e4');
@@ -132,7 +132,7 @@ function urestaurant_get_about_default_fields( $template_name ) {
         $custom_fields['field_about5f1a099eacc18'] = apply_filters('urestaurant_about_demo_about2_content', __('dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.dard dummy text ever since the 1500s,ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'urestaurant'));
 
         // Register about2 section background image.
-        $custom_fields['field_about5f1a0964acc16'] = apply_filters('urestaurant_about_demo_about2_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/about2-section.png"));
+        $custom_fields['field_about5f1a0964acc16'] = apply_filters('urestaurant_about_demo_about2_background_image_id', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/about2-section.png"));
     }
 
     return $custom_fields;

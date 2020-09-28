@@ -70,7 +70,7 @@ function urestaurant_get_contact_default_fields( $template_name ) {
     );
 
     // Register Breadcrumb Background Image field.
-    $custom_fields['field_contact5f1b27528a96d'] = apply_filters('urestaurant_contact_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/contact-breadcrumb.jpg"));
+    $custom_fields['field_contact5f1b27528a96d'] = apply_filters('urestaurant_contact_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/contact-breadcrumb.jpg"));
 
     // Register breadcrumb section heading field.
     $custom_fields['field_contact5f1b277e8a96e'] = apply_filters('urestaurant_contact_demo_breadcrumb_heading', __('Contact us', 'urestaurant'));
@@ -83,18 +83,18 @@ function urestaurant_get_contact_default_fields( $template_name ) {
         'urestaurant_contact_demo_offer_food_categories',
         array(
         'phone'          => apply_filters('urestaurant_contact_demo_phone_number', __('000-000-0000', 'urestaurant')),
-        'phone-image'    => apply_filters('urestaurant_contact_demo_phone_image', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/phone.png")),
+        'phone-image'    => apply_filters('urestaurant_contact_demo_phone_image', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/phone.png")),
         'email'          => apply_filters('urestaurant_contact_demo_email', __('info@info.com', 'urestaurant')),
-        'email-image'    => apply_filters('urestaurant_contact_demo_email_image', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/mail.png")),
+        'email-image'    => apply_filters('urestaurant_contact_demo_email_image', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/mail.png")),
         'location'       => apply_filters('urestaurant_contact_demo_location', __('Lorem ipsum dolor.', 'urestaurant')),
-        'location-image' => apply_filters('urestaurant_contact_demo_location_image', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/map.png")),
+        'location-image' => apply_filters('urestaurant_contact_demo_location_image', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/map.png")),
         ) 
     );
 
 
     // Register Contact form section Background Image field. For fancy and minimal templates.
     if ('fancy' === $template_name || 'minimal' === $template_name) {
-        $custom_fields['field_contact5f1b5537168e5'] = apply_filters('urestaurant_contact_demo_contact_form_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/contact-form-banner.png"));
+        $custom_fields['field_contact5f1b5537168e5'] = apply_filters('urestaurant_contact_demo_contact_form_background_image_id', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/contact-form-banner.png"));
     }
 
     // Register Contact form shortcode field.

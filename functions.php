@@ -39,7 +39,10 @@ define('URESTAURANT_CSS_DIR_URI', URESTAURANT_THEME_URI . '/assets/css/');
 define('URESTAURANT_INC_DIR', URESTAURANT_THEME_DIR . '/inc/');
 define('URESTAURANT_INC_DIR_URI', URESTAURANT_THEME_URI . '/inc/');
 
-// Check if plugins are active.
+// External Image Source Paths.
+define('URESTAURANT_EXT_IMAGES_SOURCE', esc_url('https://www.pricelisto.com/assets/urestaurant/'));
+
+// Check If Plugins Are Active.
 define('URESTAURANT_REDUX_ACTIVE', class_exists('ReduxFrameworkPlugin'));
 define('URESTAURANT_ACF_ACTIVE', class_exists('ACF'));
 define('URESTAURANT_BEST_RESTAURANT_ACTIVE', class_exists('Best_Restaurant_Menu'));

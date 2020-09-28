@@ -68,7 +68,7 @@ $visible_sections = apply_filters( 'urestaurant_home_visible_sections', ( get_fi
     <section class="feature_wrap v2" style="background-image: url(<?php get_field( 'background-feature' ) ? esc_attr( the_field( 'background-feature' ) ) : ''; ?>);">
         <div class="overlay v1"></div>
         <div class="container">
-            <img src="<?php echo esc_url( URESTAURANT_THEME_URI ) ?>/assets/img/<?php echo esc_html( $template_name ); ?>/shape_4.png" alt="Image" class="abs_img_7" />
+            <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/shape_4.png" alt="Image" class="abs_img_7" />
             <div class="row">
                 <div class="col-xl-6 offset-xl-6 col-lg-6 offset-lg-6 col-md-8 offset-md-4">
                     <div class="feature_text_wrap">

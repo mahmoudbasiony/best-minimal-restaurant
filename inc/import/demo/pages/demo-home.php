@@ -72,7 +72,7 @@ function urestaurant_get_home_default_fields( $template_name ) {
     );
 
     // Register Hero Background Image field.
-    $custom_fields['field_home5f18cf8d87b95'] = apply_filters( 'urestaurant_home_demo_hero_background_image_id', urestaurant_insert_attachment( URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/home-banner.png" ) );
+    $custom_fields['field_home5f18cf8d87b95'] = apply_filters( 'urestaurant_home_demo_hero_background_image_id', urestaurant_insert_attachment( URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/home-banner.png" ) );
 
     // Register hero section heading field.
     $custom_fields['field_home5f18cfeb87b96'] = apply_filters( 'urestaurant_home_demo_hero_heading', __( 'We serve quality food', 'urestaurant' ) );
@@ -81,7 +81,7 @@ function urestaurant_get_home_default_fields( $template_name ) {
     $custom_fields['field_home5f18d00b87b97'] = apply_filters( 'urestaurant_home_demo_hero_subheading', __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s stan', 'urestaurant' ) );
 
     // Register about section background image.
-    $custom_fields['field_home5f18d94435aee'] = apply_filters( 'urestaurant_home_demo_about_background_image_id', urestaurant_insert_attachment( URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/about_us.png" ) );
+    $custom_fields['field_home5f18d94435aee'] = apply_filters( 'urestaurant_home_demo_about_background_image_id', urestaurant_insert_attachment( URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/about_us.png" ) );
 
     // Register about section title field.
     $custom_fields['field_home5f18d9be35aef'] = apply_filters( 'urestaurant_home_demo_about_title', __( 'Who we are', 'urestaurant' ) );
@@ -117,7 +117,7 @@ function urestaurant_get_home_default_fields( $template_name ) {
     $custom_fields['field_home5f18daa335af2'] = apply_filters( 'urestaurant_home_demo_about_button_link', urestaurant_get_permalink_by_id( urestaurant_get_template_page_id( 'page-about.php' ) ) );
 
     // Register feature section background image.
-    $custom_fields['field_home5f18df062b5ae'] = apply_filters( 'urestaurant_home_demo_feature_background_image_id', urestaurant_insert_attachment( URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/home-feature.png" ) );
+    $custom_fields['field_home5f18df062b5ae'] = apply_filters( 'urestaurant_home_demo_feature_background_image_id', urestaurant_insert_attachment( URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/home-feature.png" ) );
 
     // Register feature section title field.
     $custom_fields['field_home5f18df472b5af'] = apply_filters( 'urestaurant_home_demo_feature_title', __( 'Our Food', 'urestaurant' ) );
@@ -142,16 +142,16 @@ function urestaurant_get_home_default_fields( $template_name ) {
         'urestaurant_home_demo_offer_food_categories',
         array(
             'food-category-title-1'      => apply_filters( 'urestaurant_home_demo_food_category_1_title', __( 'Italian Cousine', 'urestaurant' ) ),
-            'food-category-icon-1'       => apply_filters( 'urestaurant_home_demo_food_cat_1_image_id', urestaurant_insert_attachment( URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/icon_1.png" ) ),
+            'food-category-icon-1'       => apply_filters( 'urestaurant_home_demo_food_cat_1_image_id', urestaurant_insert_attachment( URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/icon_1.png" ) ),
             'food-category-target-url-1' => apply_filters( 'urestaurant_home_demo_food_category_1_url', esc_url( '' ) ),
             'food-category-title-2'      => apply_filters( 'urestaurant_home_demo_food_category_2_title', __( 'Sea Food', 'urestaurant' ) ),
-            'food-category-icon-2'       => apply_filters( 'urestaurant_home_demo_food_cat_2_image_id', urestaurant_insert_attachment( URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/icon_2.png" ) ),
+            'food-category-icon-2'       => apply_filters( 'urestaurant_home_demo_food_cat_2_image_id', urestaurant_insert_attachment( URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/icon_2.png" ) ),
             'food-category-target-url-2' => apply_filters( 'urestaurant_home_demo_food_category_2_url', esc_url( '' ) ),
             'food-category-title-3'      => apply_filters( 'urestaurant_home_demo_food_category_3_title', __( 'Snacks', 'urestaurant' ) ),
-            'food-category-icon-3'       => apply_filters( 'urestaurant_home_demo_food_cat_3_image_id', urestaurant_insert_attachment( URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/icon_3.png" ) ),
+            'food-category-icon-3'       => apply_filters( 'urestaurant_home_demo_food_cat_3_image_id', urestaurant_insert_attachment( URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/icon_3.png" ) ),
             'food-category-target-url-3' => apply_filters( 'urestaurant_home_demo_food_category_3_url', esc_url( '' ) ),
             'food-category-title-4'      => apply_filters( 'urestaurant_home_demo_food_category_4_title', __( 'Continental Dish', 'urestaurant' ) ),
-            'food-category-icon-4'       => apply_filters( 'urestaurant_home_demo_food_cat_4_image_id', urestaurant_insert_attachment( URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/icon_4.png" ) ),
+            'food-category-icon-4'       => apply_filters( 'urestaurant_home_demo_food_cat_4_image_id', urestaurant_insert_attachment( URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/icon_4.png" ) ),
             'food-category-target-url-4' => apply_filters( 'urestaurant_home_demo_food_category_4_url', esc_url( '' ) ),
         ) 
     );

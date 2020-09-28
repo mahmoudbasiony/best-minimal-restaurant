@@ -353,7 +353,7 @@ Redux::setSection(
                 'id'                    => 'cta-background',
                 'type'                  => 'background',
                 'default'               => array( 
-                    'background-image' => get_template_directory_uri() . "/assets/img/{$template_name}/call-to-action.png",
+                    'background-image' => URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/call-to-action.png",
                 ),
                 'background-color'      => false,
                 'background-repeat'     => false,

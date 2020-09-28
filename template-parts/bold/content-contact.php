@@ -92,7 +92,7 @@ $visible_sections = apply_filters( 'urestaurant_contact_visible_sections', ( get
     <section class="contact_form_wrap bg_cl">
         <div class="zigzag_top v2"></div>
         <div class="zigzag_bottom V2"></div>
-        <img src="<?php echo esc_url( URESTAURANT_THEME_URI ); ?>/assets/img/<?php echo esc_html( $template_name ); ?>/mail_shape.png" alt="image" class="abs_img_3">
+        <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/mail_shape.png" alt="image" class="abs_img_3">
         <div class="overlay v1"></div>
         <div class="container">
             <div class="row">

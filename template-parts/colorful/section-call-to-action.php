@@ -21,7 +21,7 @@ $template_name = urestaurant_get_active_theme_template();
 <section class="cta_wrap v4" style="background-image: url(<?php echo esc_url( $ultimate_restaurant_settings['cta-background']['background-image'] ); ?>);">
     <div class="overlay v1"></div>
     <div class="container">
-        <img src="<?php echo esc_attr( URESTAURANT_THEME_URI ); ?>/assets/img/<?php echo esc_html( $template_name ); ?>/shape_4.png" alt="Image" class="abs_img_6">
+        <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/shape_4.png" alt="Image" class="abs_img_6">
         <div class="row">
             <div class="col-xl-7 col-lg-6 col-md-9">
                 <div class="cta_info_box">

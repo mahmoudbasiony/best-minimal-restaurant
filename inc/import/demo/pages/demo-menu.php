@@ -70,13 +70,13 @@ function urestaurant_get_menu_default_fields( $template_name ) {
     );
 
     // Register Breadcrumb Background Image field.
-    $custom_fields['field_menu5f1a0c59c3128'] = apply_filters('urestaurant_menu_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/menu-breadcrumb.jpg"));
+    $custom_fields['field_menu5f1a0c59c3128'] = apply_filters('urestaurant_menu_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/menu-breadcrumb.jpg"));
 
     // Register breadcrumb section heading field.
     $custom_fields['field_menu5f1a0c95c3129'] = apply_filters('urestaurant_menu_demo_breadcrumb_heading', __('Our Menu', 'urestaurant'));
 
     // Register Menu Section Background Image field.
-    $custom_fields['field_menu5f1a0d7cc312d'] = apply_filters('urestaurant_menu_demo_menu_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/menu-background.jpg"));
+    $custom_fields['field_menu5f1a0d7cc312d'] = apply_filters('urestaurant_menu_demo_menu_background_image_id', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/menu-background.jpg"));
 
     // Register our menu section check menu title field.
     $custom_fields['field_menu5f1a0cedc312b'] = apply_filters('urestaurant_menu_demo_check_menu_title', __('Check Our Menu', 'urestaurant'));

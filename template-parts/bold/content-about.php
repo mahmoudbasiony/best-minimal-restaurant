@@ -88,7 +88,7 @@ $visible_sections = apply_filters( 'urestaurant_about_visible_sections', ( get_f
                             <?php if ( get_field( 'about-promo-video' ) ) :
                                 $url = get_field( 'about-promo-video', FALSE, FALSE );
                             ?>
-                                <a href="<?php echo esc_url( $url ); ?>" class="play_btn hvr-ripple-out"><img src="<?php echo URESTAURANT_THEME_URI; ?>/assets/img/<?php echo esc_html( $template_name ); ?>/play.png" alt="Image"></a>
+                                <a href="<?php echo esc_url( $url ); ?>" class="play_btn hvr-ripple-out"><img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/play.png" alt="Image"></a>
                             <?php endif; ?>
                         </div>
                     </div>

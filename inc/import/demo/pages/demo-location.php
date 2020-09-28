@@ -68,7 +68,7 @@ function urestaurant_get_location_default_fields( $template_name ) {
     );
 
     // Register Breadcrumb Background Image field.
-    $custom_fields['field_location5f1a1c7680f7d'] = apply_filters('urestaurant_location_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_THEME_DIR . "/assets/img/{$template_name}/location-breadcrumb.jpg"));
+    $custom_fields['field_location5f1a1c7680f7d'] = apply_filters('urestaurant_location_demo_breadcrumb_background_image_id', urestaurant_insert_attachment(URESTAURANT_EXT_IMAGES_SOURCE . "{$template_name}/location-breadcrumb.jpg"));
 
     // Register breadcrumb section heading field.
     $custom_fields['field_location5f1a1c9880f7e'] = apply_filters('urestaurant_location_demo_breadcrumb_heading', __('Location', 'urestaurant'));
