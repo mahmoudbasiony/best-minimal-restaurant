@@ -24,7 +24,7 @@ $visible_sections = apply_filters( 'urestaurant_about_visible_sections', ( get_f
 <!-- Breadcrumb area Start -->
 <?php if ( apply_filters( 'urestaurant_about_show_breadcrumb_section', in_array( 'breadcrumb', $visible_sections ) ) ) : ?>
     <section class="breadcrumb_wrap V4" style="background-image: url(<?php get_field( 'background-breadcrump' ) ? esc_url( the_field( 'background-breadcrump' ) ) : ''; ?>);">
-        <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/shape_2.png" alt="Image" class="abs_img_4">
+        <img src="<?php echo urestaurany_get_attachment_url_by_title("{$template_name}-shape_2"); ?>" alt="Image" class="abs_img_4">
         <div class="overlay v1"></div>
         <div class="container">
             <?php if ( get_field( 'heading-breadcrump' ) ) : ?>
@@ -88,7 +88,7 @@ $visible_sections = apply_filters( 'urestaurant_about_visible_sections', ( get_f
                             <?php if ( get_field( 'about-promo-video' ) ) :
                                 $url = get_field( 'about-promo-video', FALSE, FALSE );
                             ?>
-                                <a href="<?php echo esc_url( $url ); ?>" class="play_btn hvr-ripple-out"><img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/play.png" alt="Image"></a>
+                                <a href="<?php echo esc_url( $url ); ?>" class="play_btn hvr-ripple-out"><img src="<?php echo urestaurany_get_attachment_url_by_title("{$template_name}-play"); ?>" alt="Image"></a>
                             <?php endif; ?>
                         </div>
                     </div>

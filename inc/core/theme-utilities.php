@@ -90,11 +90,12 @@ if (! function_exists('urestaurant_insert_attachment')) {
      *
      * @return int $attachment_id
      */
-    function urestaurant_insert_attachment( $path, $post_id = 0 ) {
+    function urestaurant_insert_attachment( $path, $active_template = null, $post_id = 0 ) {
         // Initialize attachment ID variable.
         $attachment_id = null;
 
-        $file_name = basename($path);
+        $active_template = null === $active_template ? urestaurant_get_active_theme_template() : $active_template;
+        $file_name = $active_template . '-' . basename($path);
 
         $upload_file = wp_upload_bits($file_name, null, file_get_contents($path));
 
@@ -123,6 +124,29 @@ if (! function_exists('urestaurant_insert_attachment')) {
 
         return $attachment_id;
     }
+}
+
+if (!function_exists('urestaurany_get_attachment_url_by_title')) {
+    /**
+     * Get the attachment url by post title.
+     *
+     * @param string $title The attachment post title.
+     *
+     * @since 1.0.0
+     *
+     * @return string The attachemnt url.
+     */
+    function urestaurany_get_attachment_url_by_title( $title ) {
+        $args = array(
+          'post_type' => 'attachment',
+          'title' => sanitize_title($title),
+          'posts_per_page' => 1,
+          'post_status' => 'inherit',
+        );
+        $_header = get_posts( $args );
+        $header = $_header ? array_pop($_header) : null;
+        return $header ? wp_get_attachment_url($header->ID) : '';
+      }
 }
 
 if (! function_exists('urestaurant_best_restaurant_plugin_view')) {

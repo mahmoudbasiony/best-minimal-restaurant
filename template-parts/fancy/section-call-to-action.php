@@ -19,11 +19,11 @@ $template_name = urestaurant_get_active_theme_template();
 ?>
 
 <section class="cta_wrap v4" style="background-image: url(<?php echo esc_url( $ultimate_restaurant_settings['cta-background']['background-image'] ); ?>);">
-    <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/shape_3.png" alt="Image" class="abs_img_8">
-    <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/shape_4.png" alt="Image" class="abs_img_9">
+    <img src="<?php echo urestaurany_get_attachment_url_by_title("{$template_name}-shape_3"); ?>" alt="Image" class="abs_img_8">
+    <img src="<?php echo urestaurany_get_attachment_url_by_title("{$template_name}-shape_4"); ?>" alt="Image" class="abs_img_9">
     <div class="overlay v1"></div>
     <div class="container">
-        <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/bg_shape_1.png" alt="Image" class="abs_img_6">
+        <img src="<?php echo urestaurany_get_attachment_url_by_title("{$template_name}-bg_shape_1"); ?>" alt="Image" class="abs_img_6">
         <div class="row">
             <div class="col-xl-7 col-lg-6  col-md-7">
                 <div class="cta_info_box">

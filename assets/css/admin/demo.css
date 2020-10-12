@@ -41,7 +41,7 @@ p.urestaurant__ajax-loader {
 }
 
 .spinner {
-    background: url("https://www.pricelisto.com/assets/urestaurant/spinner.gif") no-repeat;
+    background: url("../../img/spinner.gif") no-repeat;
     background-size: 20px 20px;
     display: inline-block;
     visibility: hidden;

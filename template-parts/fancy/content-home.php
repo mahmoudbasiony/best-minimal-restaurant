@@ -24,7 +24,7 @@ $visible_sections = apply_filters( 'urestaurant_home_visible_sections', ( get_fi
 <!-- Hero area Start -->
 <?php if ( apply_filters( 'urestaurant_home_show_hero_section', in_array( 'hero', $visible_sections ) ) ) : ?>
     <section class="hero_wrap v4" style="background-image: url(<?php get_field( 'background-hero' ) ? esc_attr( the_field( 'background-hero' ) ) : ''; ?>);">
-        <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/shape_2.png" alt="Image" class="abs_img_7">
+        <img src="<?php echo urestaurany_get_attachment_url_by_title("{$template_name}-shape_2"); ?>" alt="Image" class="abs_img_7">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-7">
@@ -76,7 +76,7 @@ $visible_sections = apply_filters( 'urestaurant_home_visible_sections', ( get_fi
 <!-- Feature section starts -->
 <?php if ( apply_filters( 'urestaurant_home_show_feature_section', in_array( 'feature', $visible_sections ) ) ) : ?>
     <section class="feature_wrap v4" style="background-image: url(<?php get_field( 'background-feature' ) ? esc_attr( the_field( 'background-feature' ) ) : ''; ?>);">
-        <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/shape_2.png" alt="Image" class="abs_img_5">
+        <img src="<?php echo urestaurany_get_attachment_url_by_title("{$template_name}-shape_2"); ?>" alt="Image" class="abs_img_5">
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-6  col-md-8">

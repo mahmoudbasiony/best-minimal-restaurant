@@ -24,7 +24,7 @@ $visible_sections = apply_filters( 'urestaurant_menu_visible_sections', ( get_fi
 <!-- Breadcrumb area Start -->
 <?php if ( apply_filters( 'urestaurant_menu_show_breadcrumb_section', in_array( 'breadcrumb', $visible_sections ) ) ) : ?>
     <section class="breadcrumb_wrap v4" style="background-image: url(<?php get_field( 'background-breadcrump-menu' ) ? esc_url( the_field( 'background-breadcrump-menu' ) ) : ''; ?>);">
-        <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/shape_2.png" alt="Image" class="abs_img_4">
+        <img src="<?php echo urestaurany_get_attachment_url_by_title("{$template_name}-shape_2"); ?>" alt="Image" class="abs_img_4">
         <div class="overlay v1"></div>
         <div class="container">
             <?php if ( get_field( 'heading-breadcrump-menu' ) ) : ?>

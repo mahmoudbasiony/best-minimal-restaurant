@@ -27,7 +27,7 @@ Description
 
 == Changelog ==
 
-= 1.0.0 - Sep 11 2020 =
+= 1.0.0 - Oct 13 2020 =
 * Initial release
 
 == Credits ==

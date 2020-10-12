@@ -78,6 +78,12 @@ if (! in_array('menu', $imported_pages)) {
 }
 
 /*
+ * Import ext images.
+ */
+include_once URESTAURANT_INC_DIR . 'import/demo/img/ext-images.php';
+urestaurant_import_demo_external_images();
+
+/*
  * Import demo contact form 7.
  */
 require_once ABSPATH . 'wp-admin/includes/post.php';

@@ -607,7 +607,7 @@ a:hover {
     left: -20px;
     transform: translateY(-50%);
     content: "";
-    background-image: url("https://www.pricelisto.com/assets/urestaurant/bold/left_arrow.png");
+    background-image: url("../img/left_arrow.png");
     width: 20px;
     height: 75%;
     background-position: center;
@@ -620,7 +620,7 @@ a:hover {
     right: -20px;
     transform: translateY(-50%);
     content: "";
-    background-image: url("https://www.pricelisto.com/assets/urestaurant/bold/right_arrow.png");
+    background-image: url("../img/right_arrow.png");
     width: 20px;
     height: 75%;
     background-position: center;
@@ -1217,7 +1217,7 @@ a:hover {
     left: -45px;
     transform: translateY(-50%);
     content: "";
-    background-image: url("https://www.pricelisto.com/assets/urestaurant/bold/left_arrow_2.png");
+    background-image: url("../img/left_arrow_2.png");
     width: 45px;
     height: 88%;
     background-position: center;
@@ -1230,7 +1230,7 @@ a:hover {
     right: -45px;
     transform: translateY(-50%);
     content: "";
-    background-image: url("https://www.pricelisto.com/assets/urestaurant/bold/right_arrow_2.png");
+    background-image: url("../img/right_arrow_2.png");
      width: 45px;
     height: 88%;
     background-position: center;

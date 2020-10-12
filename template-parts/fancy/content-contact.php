@@ -24,7 +24,7 @@ $visible_sections = apply_filters( 'urestaurant_contact_visible_sections', ( get
 <!-- Breadcrumb area Start -->
 <?php if ( apply_filters( 'urestaurant_contact_show_breadcrumb_section', in_array( 'breadcrumb', $visible_sections ) ) ) : ?>
     <section class="breadcrumb_wrap v4" style="background-image: url(<?php get_field( 'background-breadcrump-contact' ) ? esc_url( the_field( 'background-breadcrump-contact' ) ) : ''; ?>);">
-        <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/shape_2.png" alt="Image" class="abs_img_4">
+        <img src="<?php echo urestaurany_get_attachment_url_by_title("{$template_name}-shape_3"); ?>" alt="Image" class="abs_img_4">
         <div class="overlay v2"></div>
         <div class="container">
             <?php if ( get_field( 'heading-breadcrump-contact' ) ) : ?>
@@ -91,8 +91,8 @@ $visible_sections = apply_filters( 'urestaurant_contact_visible_sections', ( get
 <!-- Contact form starts -->
 <?php if ( apply_filters( 'urestaurant_contact_show_contact_form_section', in_array( 'contact-form', $visible_sections ) ) ) : ?>
     <section class="contact_form_wrap" style="background-image: url(<?php get_field( 'contact-form-background' ) ? esc_url( the_field( 'contact-form-background' ) ) : ''; ?>);">
-        <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/shape_3.png" alt="Image" class="abs_img_10">
-        <img src="<?php echo URESTAURANT_EXT_IMAGES_SOURCE . esc_html( $template_name ); ?>/mail_shape.png" alt="image" class="abs_img_3">
+        <img src="<?php echo urestaurany_get_attachment_url_by_title("{$template_name}-shape_3"); ?>" alt="Image" class="abs_img_10">
+        <img src="<?php echo urestaurany_get_attachment_url_by_title("{$template_name}-mail_shape"); ?>" alt="image" class="abs_img_3">
         <div class="overlay v1"></div>
 
         <div class="container">
