@@ -154,6 +154,8 @@ add_action('after_setup_theme', 'urestaurant_setup');
  *
  * Priority 0 to make it available to lower priority callbacks.
  *
+ * @since 1.0.0
+ *
  * @global int $content_width
  *
  * @return array $GLOBALS
@@ -162,6 +164,40 @@ function urestaurant_content_width() {
     $GLOBALS['content_width'] = apply_filters('urestaurant_content_width', 1200);
 }
 add_action('after_setup_theme', 'urestaurant_content_width', 0);
+
+/**
+ * Register widget area.
+ *
+ * @since 1.0.0
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function urestaurant_widgets_init() {
+    register_sidebar(
+        array(
+            'name'          => esc_html__( 'Sidebar', 'urestaurant' ),
+            'id'            => 'sidebar-1',
+            'description'   => esc_html__( 'Add widgets here.', 'urestaurant' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+}
+add_action( 'widgets_init', 'urestaurant_widgets_init' );
+
+/**
+ * Enqueue editor styles.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function urestaurant_editor_styles() {
+    add_editor_style();
+}
+add_action( 'init', 'urestaurant_editor_styles' );
 
 /*
  * Helper functions
@@ -172,6 +208,11 @@ require URESTAURANT_INC_DIR . 'core/theme-utilities.php';
  * Enqueue scripts and styles.
  */
 require URESTAURANT_INC_DIR . 'core/theme-scripts.php';
+
+/**
+ * Implement the Custom Header feature.
+ */
+require URESTAURANT_INC_DIR . 'custom-header.php';
 
 /*
  * Custom template tags for this theme.

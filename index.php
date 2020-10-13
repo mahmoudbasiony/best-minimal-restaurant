@@ -37,4 +37,5 @@ urestaurant_get_header();
     </main><!-- #main -->
 
 <?php
+get_sidebar();
 urestaurant_get_footer();

@@ -92,7 +92,7 @@ if (! function_exists('urestaurant_get_demo_mail')) {
                     /* translators: 1: blog name, 2: blog URL */
             __('This e-mail was sent from a contact form on %1$s (%2$s)', 'urestaurant'),
             get_bloginfo('name'),
-            get_bloginfo('url')
+            esc_url(home_url())
         ),
         'recipient'          => get_option('admin_email'),
         'additional_headers' => '',
@@ -136,7 +136,7 @@ if (! function_exists('urestaurant_get_demo_mail_2')) {
                     /* translators: 1: blog name, 2: blog URL */
             __('This e-mail was sent from a contact form on %1$s (%2$s)', 'urestaurant'),
             get_bloginfo('name'),
-            get_bloginfo('url')
+            esc_url(home_url())
         ),
         'recipient'          => '[your-email]',
         'additional_headers' => sprintf(

@@ -84,7 +84,7 @@ $active_template = urestaurant_get_active_theme_template();
                                 <?php if (has_custom_logo()) : ?>
                                     <?php the_custom_logo(); ?>
                                 <?php else : ?>
-                                    <a class="navbar-brand mx-auto" href="<?php esc_url(bloginfo('url')); ?>">
+                                    <a class="navbar-brand mx-auto" href="<?php echo esc_url(home_url()); ?>">
                                         <h1><?php esc_html(bloginfo('name')); ?></h1>
                                     </a>
                                 <?php endif; ?>

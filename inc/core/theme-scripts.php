@@ -32,8 +32,11 @@ function urestaurant_global_theme_js() {
     wp_enqueue_script('nice-select', $dir . 'third/jquery-nice-select.js', array('jquery'), $theme_version, true);
     wp_enqueue_script('magnific-popup', $dir . 'third/jquery.magnific-popup.js', array('jquery'), $theme_version, true);
 
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+
     wp_enqueue_script('urestaurant-main', $dir . 'main.js', array('jquery'), $theme_version, true);
-    
 }
 add_action('wp_enqueue_scripts', 'urestaurant_global_theme_js');
 

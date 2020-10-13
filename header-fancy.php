@@ -69,7 +69,7 @@ $active_template = urestaurant_get_active_theme_template();
                                 <?php the_custom_logo(); ?>
                             <?php else : ?>
                                 <h1>
-                                    <a class="text_ph" href="<?php esc_url(bloginfo('url')); ?>">
+                                    <a class="text_ph" href="<?php echo esc_url(home_url()); ?>">
                                         <?php esc_html(bloginfo('name')); ?>
                                     </a>
                                 </h1>

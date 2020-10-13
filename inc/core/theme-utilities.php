@@ -91,13 +91,20 @@ if (! function_exists('urestaurant_insert_attachment')) {
      * @return int $attachment_id
      */
     function urestaurant_insert_attachment( $path, $active_template = null, $post_id = 0 ) {
+        global $wp_filesystem;
         // Initialize attachment ID variable.
         $attachment_id = null;
 
         $active_template = null === $active_template ? urestaurant_get_active_theme_template() : $active_template;
         $file_name = $active_template . '-' . basename($path);
 
-        $upload_file = wp_upload_bits($file_name, null, file_get_contents($path));
+        if (!is_a($wp_filesystem, 'WP_Filesystem_Base')) {
+            include_once(ABSPATH . 'wp-admin/includes/file.php');
+            $creds = request_filesystem_credentials( site_url() );
+            wp_filesystem($creds);
+        }
+
+        $upload_file = wp_upload_bits($file_name, null, $wp_filesystem->get_contents($path));
 
         // If no error.
         if (! $upload_file['error']) {

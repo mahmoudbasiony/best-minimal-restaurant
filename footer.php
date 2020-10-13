@@ -38,13 +38,13 @@ global $ultimate_restaurant_settings, $active_template;
                                     <?php
                                     echo date_i18n(
                                         /* translators: Copyright date format, see https://www.php.net/date */
-                                        _x( 'Y', 'copyright date format', 'ultimate-restaurant' )
+                                        _x( 'Y', 'copyright date format', 'urestaurant' )
                                     );
                                     ?>
                                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html( bloginfo( 'name' ) ); ?></a>
-                                    <?php esc_html_e( ' | Powered by ', 'ultimate-restaurant' ); ?>
-                                    <a href="<?php echo esc_url( 'https://www.pricelisto.com/', 'ultimate-restaurant' ); ?>">
-                                        <?php esc_html_e( 'PriceListo', 'ultimate-restaurant' ); ?>
+                                    <?php esc_html_e( ' | Powered by ', 'urestaurant' ); ?>
+                                    <a href="<?php echo esc_url( 'https://www.pricelisto.com/', 'urestaurant' ); ?>">
+                                        <?php esc_html_e( 'PriceListo', 'urestaurant' ); ?>
                                     </a>
                                 </p><!-- .footer-copyright -->
                             </div>

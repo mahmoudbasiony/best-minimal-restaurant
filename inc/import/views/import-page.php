@@ -20,7 +20,9 @@
         </p>
 
         <p class="urestaurant__ajax-loader  js-urestaurant-ajax-loader">
-            <span class="spinner"></span> <?php esc_html_e('Importing, please wait!', 'pt-urestaurant'); ?>
+            <span class="spinner"></span>
+            <span><?php esc_html_e('The import process is starting.', 'urestaurant'); ?></span>
+            <span><?php esc_html_e('This process may take a while on some hosts, so please be patient.', 'urestaurant'); ?></span>
         </p>
     </div>
 
