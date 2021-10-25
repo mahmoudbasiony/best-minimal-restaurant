@@ -48,13 +48,15 @@ global $ultimate_restaurant_settings, $active_template;
                                     </a>
                                 </p><!-- .footer-copyright -->
                             </div>
-                            <div class="social_profile">
-                                <ul>
-                                    <li><a href="<?php echo esc_url( $ultimate_restaurant_settings['facebook'] ); ?>"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="<?php echo esc_url( $ultimate_restaurant_settings['twitter'] ); ?>"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="<?php echo esc_url( $ultimate_restaurant_settings['instagram'] ); ?>"><i class="ion-social-instagram-outline"></i></a></li>
-                                </ul>
-                            </div>
+                            <?php if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['show-social-icons']) && '1' === $ultimate_restaurant_settings['show-social-icons'] ) : ?>
+                                <div class="social_profile">
+                                    <ul>
+                                        <li><a href="<?php echo esc_url( $ultimate_restaurant_settings['facebook'] ); ?>"><i class="ion-social-facebook"></i></a></li>
+                                        <li><a href="<?php echo esc_url( $ultimate_restaurant_settings['twitter'] ); ?>"><i class="ion-social-twitter"></i></a></li>
+                                        <li><a href="<?php echo esc_url( $ultimate_restaurant_settings['instagram'] ); ?>"><i class="ion-social-instagram-outline"></i></a></li>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

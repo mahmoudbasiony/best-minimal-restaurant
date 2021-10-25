@@ -6,6 +6,11 @@
  * @author  PriceListo
  */
 
+// Exits if ACF niether installed nor activated.
+if ( ! URESTAURANT_ACF_ACTIVE || ! function_exists( 'get_field' ) ) {
+    return;
+}
+
 /**
  * Get the visible sections on this template
  *

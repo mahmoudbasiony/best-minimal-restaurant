@@ -13,26 +13,32 @@
  * @author  PriceListo
  */
 
-urestaurant_get_header();
+get_header();
 ?>
 
-    <main id="primary" class="site-main">
+<main id="primary" class="site-main">
+        <section class="latest_post_wrap v1"></section>
 
-        <?php
-        while ( have_posts() ) :
-            the_post();
+        <div id="primary site-content" class="content-area">
+            <?php
+            if ( have_posts() ) :
 
-            get_template_part( 'template-parts/content', 'page' );
+                /* Start the Loop */
+                while ( have_posts() ) :
 
-            // If comments are open or we have at least one comment, load up the comment template.
-            if ( comments_open() || get_comments_number() ) :
-                comments_template();
+                    the_post();
+                    get_template_part( 'template-parts/content'  );
+                endwhile;
+
+            else :
+
+                get_template_part( 'template-parts/content', 'none' );
+
             endif;
-
-        endwhile; // End of the loop.
-        ?>
+            ?>
+        </div>
 
     </main><!-- #main -->
 
 <?php
-urestaurant_get_footer();
+get_footer();

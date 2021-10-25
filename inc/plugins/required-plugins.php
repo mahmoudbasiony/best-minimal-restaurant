@@ -23,8 +23,8 @@ function urestaurant_register_required_plugins() {
         array(
             'name'               => esc_html__( 'Advanced Custom Fields', 'urestaurant' ), // The plugin name.
             'slug'               => 'advanced-custom-fields', // The plugin slug (typically the folder name).
-            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-            'version'            => '5.9.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+            'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+            'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             'is_callable'        => 'ACF',
@@ -34,8 +34,8 @@ function urestaurant_register_required_plugins() {
         array(
             'name'               => esc_html__( 'Best Restaurant Menu by PriceListo', 'urestaurant' ), // The plugin name.
             'slug'               => 'best-restaurant-menu-by-pricelisto', // The plugin slug (typically the folder name).
-            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-            'version'            => '1.2.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+            'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+            'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
         ),
@@ -44,8 +44,8 @@ function urestaurant_register_required_plugins() {
         array(
             'name'               => esc_html__( 'Contact Form 7', 'urestaurant' ), // The plugin name.
             'slug'               => 'contact-form-7', // The plugin slug (typically the folder name).
-            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-            'version'            => '5.2.2', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+            'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+            'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
         ),
@@ -54,8 +54,8 @@ function urestaurant_register_required_plugins() {
         array(
             'name'                  => esc_html__( 'Redux Framework', 'urestaurant' ),
             'slug'                  => 'redux-framework',
-            'required'              => true,
-            'version'               => '4.1.17',
+            'required'              => false,
+            'version'               => '',
             'force_activation'      => false,
             'force_deactivation'    => false,
         ),

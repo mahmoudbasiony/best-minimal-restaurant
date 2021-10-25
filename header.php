@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for our theme
+ * The header for Minimal theme Template
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
@@ -12,6 +12,17 @@
 
 global $ultimate_restaurant_settings, $active_template;
 $active_template = urestaurant_get_active_theme_template();
+
+$wrapper_classes  = 'site-header';
+$wrapper_classes .= has_custom_logo() ? ' has-logo' : '';
+$wrapper_classes .= ( true === get_theme_mod( 'display_title_and_tagline', true ) ) ? ' has-title-and-tagline' : '';
+$wrapper_classes .= has_nav_menu( 'urestaurant_main_menu' ) ? ' has-menu' : '';
+
+$blog_info    = get_bloginfo( 'name' );
+$description  = get_bloginfo( 'description', 'display' );
+$show_title   = ( true === get_theme_mod( 'display_title_and_tagline', true ) );
+$header_class = $show_title ? 'site-title' : 'screen-reader-text';
+
 ?>
 
 <!doctype html>
@@ -26,13 +37,11 @@ $active_template = urestaurant_get_active_theme_template();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
-    <!--====== Title ======-->
-    <title><?php wp_title( '' ); ?></title>
-
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
     <!-- Preloader Start -->
     <div class="proloader">
         <div class="loader_34">
@@ -59,20 +68,44 @@ $active_template = urestaurant_get_active_theme_template();
     </div>
     <!-- Preloader End -->
     <div class="page_wrapper">
+        <a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'urestaurant' ); ?></a>
         <!-- Header  Start -->
-        <header class="header-bar-area w-100 <?php echo esc_attr( $active_template ); ?>">
+        <header class="<?php echo esc_attr( $wrapper_classes ); ?> header-bar-area w-100  v1">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-5 col-8">
                         <div class="logo">
-                            <?php if ( has_custom_logo() ) : ?>
+                            <?php if (has_custom_logo()) : ?>
                                 <?php the_custom_logo(); ?>
                             <?php else : ?>
-                                <h1>
-                                    <a class="text_wh" href="<?php echo esc_url(home_url()); ?>">
-                                        <?php bloginfo( 'name' ); ?>
-                                    </a>
-                                </h1>
+                                <?php if ( $blog_info && $show_title ) : ?>
+                                    <?php if ( is_front_page() && ! is_paged() ) : ?>
+                                        <h1 class="<?php echo esc_attr( $header_class ); ?>">
+                                            <a class="text_wh" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                                <?php echo esc_html( $blog_info ); ?>
+                                            </a>
+                                        </h1>
+
+                                    <?php elseif ( is_front_page() && ! is_home() ) : ?>
+                                        <h1 class="<?php echo esc_attr( $header_class ); ?>">
+                                            <a class="text_wh" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                                <?php echo esc_html( $blog_info ); ?>
+                                            </a>
+                                        </h1>
+                                    <?php else : ?>
+                                        <h1 class="<?php echo esc_attr( $header_class ); ?>">
+                                            <a class="text_wh" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                                <?php echo esc_html( $blog_info ); ?>
+                                            </a>
+                                        </h1>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            <?php endif; ?>
+
+                            <?php if ( $description && true === get_theme_mod( 'display_title_and_tagline', true ) ) : ?>
+                                <p class="site-description">
+                                    <?php echo $description; // phpcs:ignore WordPress.Security.EscapeOutput ?>
+                                </p>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -80,13 +113,13 @@ $active_template = urestaurant_get_active_theme_template();
                         <div class="site-navbar">
                             <nav class="site-navigation">
                                 <?php
-                                if ( has_nav_menu( 'urestaurant_main_menu' ) ) {
+                                if (has_nav_menu( 'urestaurant_main_menu')) {
                                     wp_nav_menu(
                                         array(
                                             'theme_location' => 'urestaurant_main_menu',
                                             'container'  => false,
                                             'menu_class' => 'site-menu js-clone-nav d-none d-lg-block',
-                                        ) 
+                                        )
                                     );
                                 }
                                 ?>
@@ -99,22 +132,22 @@ $active_template = urestaurant_get_active_theme_template();
                             <!--mobile-menu starts -->
                             <div class="site-mobile-menu">
                                 <div class="site-mobile-menu-header">
-                                    <div class="site-mobile-menu-close  js-menu-toggle">
+                                    <a href="#" class="site-mobile-menu-close  js-menu-toggle">
                                         <i class="ion-ios-close-empty"></i>
-                                    </div>
+                                    </a>
                                 </div>
-                                <?php if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['reservation-button-url']) && !empty($ultimate_restaurant_settings['reservation-button-url'])) : ?>
+                                <?php if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['show-reservation-button']) && '1' === $ultimate_restaurant_settings['show-reservation-button'] ) : ?>
                                     <div class="site-mobile-menu-body">
                                         <div class="header_btn">
-                                            <a href="<?php echo esc_url($ultimate_restaurant_settings['reservation-button-url']); ?>" class="btn <?php echo esc_attr($active_template); ?>"><?php echo !empty($ultimate_restaurant_settings['reservation-button-text']) ? esc_html($ultimate_restaurant_settings['reservation-button-text']) : esc_html__('Reservation', 'urestaurant'); ?></a>
+                                            <a href="<?php echo esc_url($ultimate_restaurant_settings['reservation-button-url']); ?>" class="btn v3"><?php echo esc_html($ultimate_restaurant_settings['reservation-button-text']); ?></a>
                                         </div>
                                     </div>
                                 <?php endif; ?>
                             </div>
                             <!--mobile-menu ends-->
-                            <?php if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['reservation-button-url']) && !empty($ultimate_restaurant_settings['reservation-button-url'])) : ?>
+                            <?php if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['show-reservation-button']) && '1' === $ultimate_restaurant_settings['show-reservation-button'] ) : ?>
                                 <div class="header_btn md-none">
-                                    <a href="<?php echo esc_url($ultimate_restaurant_settings['reservation-button-url']); ?>" class="btn <?php echo esc_attr($active_template); ?>"><?php echo !empty($ultimate_restaurant_settings['reservation-button-text']) ? esc_html($ultimate_restaurant_settings['reservation-button-text']) : esc_html__('Reservation', 'urestaurant'); ?></a>
+                                    <a href="<?php echo esc_url($ultimate_restaurant_settings['reservation-button-url']); ?>" class="btn v3"><?php echo esc_html($ultimate_restaurant_settings['reservation-button-text']); ?></a>
                                 </div>
                             <?php endif; ?>
                         </div>

@@ -86,6 +86,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'max_height'        => '',
                     'max_size'          => '',
                     'mime_types'        => '',
+                    'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-locationpage-breadcrumb-background' ),
                 ),
                 array(
                     'key'               => 'field_location5f1a1c9880f7e',
@@ -192,7 +193,7 @@ if (function_exists('acf_add_local_field_group')) :
                     array(
                         'param'    => 'page_template',
                         'operator' => '==',
-                        'value'    => 'page-location.php',
+                        'value'    => 'template-location.php',
                     ),
                 ),
         ),

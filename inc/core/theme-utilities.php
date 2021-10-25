@@ -15,15 +15,7 @@ if (! function_exists('urestaurant_get_active_theme_template')) {
      * @return string $active_template The active template name
      */
     function urestaurant_get_active_theme_template() {
-        global $ultimate_restaurant_settings;
-
-        $active_template = 'minimal';
-    
-        if (isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['ultimate-restaurant-theme']) && ! empty($ultimate_restaurant_settings['ultimate-restaurant-theme'])) {
-            $active_template = $ultimate_restaurant_settings['ultimate-restaurant-theme'];
-        }
-    
-        return esc_html(stripslashes($active_template));
+        return esc_html( apply_filters( 'urestaurant_active_theme_template', 'minimal' ) );
     }
 }
 
@@ -79,60 +71,6 @@ if (! function_exists('urestaurant_get_permalink_by_id')) {
     }
 }
 
-if (! function_exists('urestaurant_insert_attachment')) {
-    /**
-     * Insert attachment to upload folder and return the attachment ID.
-     *
-     * @param string $path    The attachment path
-     * @param int    $post_id The post ID - default = 0
-     *
-     * @since 1.0.0
-     *
-     * @return int $attachment_id
-     */
-    function urestaurant_insert_attachment( $path, $active_template = null, $post_id = 0 ) {
-        global $wp_filesystem;
-        // Initialize attachment ID variable.
-        $attachment_id = null;
-
-        $active_template = null === $active_template ? urestaurant_get_active_theme_template() : $active_template;
-        $file_name = $active_template . '-' . basename($path);
-
-        if (!is_a($wp_filesystem, 'WP_Filesystem_Base')) {
-            include_once(ABSPATH . 'wp-admin/includes/file.php');
-            $creds = request_filesystem_credentials( site_url() );
-            wp_filesystem($creds);
-        }
-
-        $upload_file = wp_upload_bits($file_name, null, $wp_filesystem->get_contents($path));
-
-        // If no error.
-        if (! $upload_file['error']) {
-            $file_type  = wp_check_filetype($file_name, null);
-            $attachment = array(
-                'post_mime_type' => $file_type['type'],
-                'post_title'     => preg_replace('/\.[^.]+$/', '', $file_name),
-                'post_content'   => '',
-                'post_status'    => 'inherit',
-            );
-
-            $attachment_id = wp_insert_attachment($attachment, $upload_file['file'], $post_id);
-
-            // Validate insert attachment.
-            if (! is_wp_error($attachment_id)) {
-                // Include admin image.php file
-                include_once ABSPATH . 'wp-admin/includes/image.php';
-
-                // Generate attachment metadata
-                $attachment_data = wp_generate_attachment_metadata($attachment_id, $upload_file['file']);
-                wp_update_attachment_metadata($attachment_id, $attachment_data);
-            }
-        }
-
-        return $attachment_id;
-    }
-}
-
 if (!function_exists('urestaurany_get_attachment_url_by_title')) {
     /**
      * Get the attachment url by post title.
@@ -153,7 +91,30 @@ if (!function_exists('urestaurany_get_attachment_url_by_title')) {
         $_header = get_posts( $args );
         $header = $_header ? array_pop($_header) : null;
         return $header ? wp_get_attachment_url($header->ID) : '';
-      }
+    }
+}
+
+if (!function_exists('urestaurany_get_attachment_id_by_name')) {
+    /**
+     * Get the attachment ID by post name.
+     *
+     * @param string $name The attachment post name.
+     *
+     * @since 1.0.0
+     *
+     * @return int|string The attachemnt ID or empty string if not found.
+     */
+    function urestaurany_get_attachment_id_by_name( $name ) {
+        $args = array(
+          'post_type' => 'attachment',
+          'name' => sanitize_title($name),
+          'posts_per_page' => 1,
+          'post_status' => 'inherit',
+        );
+        $_header = get_posts( $args );
+        $attachment = $_header ? array_pop($_header) : null;
+        return $attachment ? (int) $attachment->ID : '';
+    }
 }
 
 if (! function_exists('urestaurant_best_restaurant_plugin_view')) {

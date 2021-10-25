@@ -87,6 +87,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'max_height'        => '',
                     'max_size'          => '',
                     'mime_types'        => '',
+                    'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-menupage-breadcrumb-background' ),
                 ),
                 array(
                     'key'               => 'field_menu5f1a0c95c3129',
@@ -154,6 +155,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'max_height'        => '',
                     'max_size'          => '',
                     'mime_types'        => '',
+                    'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-menupage-menu-section' ),
                 ),
                 array(
                     'key'               => 'field_menu5f1a0cedc312b',
@@ -218,7 +220,7 @@ if (function_exists('acf_add_local_field_group')) :
                     array(
                         'param'    => 'page_template',
                         'operator' => '==',
-                        'value'    => 'page-menu.php',
+                        'value'    => 'template-menu.php',
                     ),
                 ),
         ),

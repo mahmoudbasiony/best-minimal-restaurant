@@ -15,30 +15,7 @@ if (! function_exists( 'urestaurant_get_header' )) {
      * @return mixed|HTML
      */
     function urestaurant_get_header() {
-        // Get current active template.
-        $active_template = urestaurant_get_active_theme_template();
-
-        switch ( $active_template ) {
-            case 'bold' :
-                get_header( 'bold' );
-            break;
-
-            case 'colorful' :
-                get_header( 'colorful' );
-            break;
-
-            case 'fancy' :
-                get_header( 'fancy' );
-            break;
-
-            case 'minimal' :
-                get_header( 'minimal' );
-            break;
-
-            default :
-                get_header();
-            break;
-        }
+        get_header();
     }
 }
 
@@ -53,6 +30,42 @@ if (! function_exists( 'urestaurant_get_footer' )) {
     function urestaurant_get_footer() {
         get_footer();
     }
+}
+
+/**
+ * Creates continue reading text.
+ *
+ * @since Twenty Twenty-One 1.0
+ */
+function urestaurant_continue_reading_text() {
+	$continue_reading = sprintf(
+		/* translators: %s: Name of current post. */
+		esc_html__( 'Continue reading %s', 'twentytwentyone' ),
+		the_title( '<span class="screen-reader-text">', '</span>', false )
+	);
+
+	return $continue_reading;
+}
+
+/**
+ * Determines if post thumbnail can be displayed.
+ *
+ * @since Twenty Twenty-One 1.0
+ *
+ * @return bool
+ */
+function urestaurant_can_show_post_thumbnail() {
+	/**
+	 * Filters whether post thumbnail can be displayed.
+	 *
+	 * @since Twenty Twenty-One 1.0
+	 *
+	 * @param bool $show_post_thumbnail Whether to show post thumbnail.
+	 */
+	return apply_filters(
+		'urestaurant_can_show_post_thumbnail',
+		! post_password_required() && ! is_attachment() && has_post_thumbnail()
+	);
 }
 
 /**
@@ -74,11 +87,11 @@ function urestaurant_body_classes( $classes ) {
 
     // Custom template pages.
     $page_templates = apply_filters( 'urestaurant_custom_page_templates', array(
-        'home'     => 'page-home.php',
-        'about'    => 'page-about.php',
-        'contact'  => 'page-contact.php',
-        'menu'     => 'page-menu.php',
-        'location' => 'page-location.php',
+        'home'     => 'template-home.php',
+        'about'    => 'template-about.php',
+        'contact'  => 'template-contact.php',
+        'menu'     => 'template-menu.php',
+        'location' => 'template-location.php',
     ) );
 
     // Get current active template name.
@@ -160,3 +173,27 @@ function urestaurant_get_custom_logo( $html ) {
     return $html;
 }
 add_filter( 'get_custom_logo', 'urestaurant_get_custom_logo', 10, 2 );
+
+/**
+ * Gets the SVG code for a given icon.
+ *
+ * @since 1.0.0
+ *
+ * @param string $group The icon group.
+ * @param string $icon  The icon.
+ * @param int    $size  The icon size in pixels.
+ * @return string
+ */
+function urestaurant_get_icon_svg( $icon ) {
+
+    $icons = array(
+        'arrow_right' => '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m4 13v-2h12l-4-4 1-2 7 7-7 7-1-2 4-4z" fill="currentColor"/></svg>',
+        'arrow_left'  => '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 13v-2H8l4-4-1-2-7 7 7 7 1-2-4-4z" fill="currentColor"/></svg>',
+    );
+
+    if ( isset( $icon ) && isset( $icons[$icon] ) ) {
+        return $icons[$icon];
+    }
+
+    return '';
+}

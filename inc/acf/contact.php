@@ -91,6 +91,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'max_height'        => '',
                     'max_size'          => '',
                     'mime_types'        => '',
+                    'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-contactpage-breadcrumb-background' ),
                 ),
                 array(
                     'key'               => 'field_contact5f1b277e8a96e',
@@ -211,6 +212,7 @@ if (function_exists('acf_add_local_field_group')) :
                             'max_height'        => '',
                             'max_size'          => '',
                             'mime_types'        => '',
+                            'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-contactpage-contact-phone' ),
                         ),
                         array(
                             'key'               => 'field_contact5f1b2b33e3794',
@@ -254,6 +256,7 @@ if (function_exists('acf_add_local_field_group')) :
                             'max_height'        => '',
                             'max_size'          => '',
                             'mime_types'        => '',
+                            'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-contactpage-contact-email' ),
                         ),
                         array(
                             'key'               => 'field_contact5f1b2b6be3796',
@@ -297,6 +300,7 @@ if (function_exists('acf_add_local_field_group')) :
                             'max_height'        => '',
                             'max_size'          => '',
                             'mime_types'        => '',
+                            'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-contactpage-contact-location' ),
                         ),
                     ),
                 ),
@@ -347,6 +351,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'max_height'        => '',
                     'max_size'          => '',
                     'mime_types'        => '',
+                    'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-contactpage-contact-form-background' ),
                 ),
                 array(
                     'key'               => 'field_contact5f1b5585168e6',
@@ -415,7 +420,7 @@ if (function_exists('acf_add_local_field_group')) :
                     array(
                         'param'    => 'page_template',
                         'operator' => '==',
-                        'value'    => 'page-contact.php',
+                        'value'    => 'template-contact.php',
                     ),
                 ),
         ),

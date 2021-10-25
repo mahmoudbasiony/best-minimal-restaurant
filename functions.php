@@ -35,12 +35,12 @@ define('URESTAURANT_THEME_VERSION', '1.0.0');
 define('URESTAURANT_JS_DIR_URI', URESTAURANT_THEME_URI . '/assets/js/');
 define('URESTAURANT_CSS_DIR_URI', URESTAURANT_THEME_URI . '/assets/css/');
 
+// Images folder path.
+define('URESTAURANT_IMAGES_DIR_URI', URESTAURANT_THEME_URI . '/assets/img/');
+
 // Include Paths.
 define('URESTAURANT_INC_DIR', URESTAURANT_THEME_DIR . '/inc/');
 define('URESTAURANT_INC_DIR_URI', URESTAURANT_THEME_URI . '/inc/');
-
-// External Image Source Paths.
-define('URESTAURANT_EXT_IMAGES_SOURCE', esc_url('https://www.pricelisto.com/assets/urestaurant/'));
 
 // Check If Plugins Are Active.
 define('URESTAURANT_REDUX_ACTIVE', class_exists('ReduxFrameworkPlugin'));
@@ -91,10 +91,8 @@ if (! function_exists('urestaurant_setup')) :
         // Register navigation menus.
         register_nav_menus(
             array(
-            'urestaurant_main_menu'      => esc_html__('Main Menu', 'urestaurant'),
-            'urestaurant_top_right_menu' => esc_html__('Top Right Menu', 'urestaurant'),
-            'urestaurant_top_left_menu'  => esc_html__('Top Left Menu', 'urestaurant'),
-            'urestaurant_footer_menu'    => esc_html__('Footer Menu', 'urestaurant'),
+            'urestaurant_main_menu'   => esc_html__('Main Menu', 'urestaurant'),
+            'urestaurant_footer_menu' => esc_html__('Footer Menu', 'urestaurant'),
             )
         );
 
@@ -130,20 +128,34 @@ if (! function_exists('urestaurant_setup')) :
         // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
 
-        /**
+        /*
          * Add support for core custom logo.
          *
          * @link https://codex.wordpress.org/Theme_Logo
          */
+        $logo_width  = 300;
+        $logo_height = 100;
+
         add_theme_support(
             'custom-logo',
             array(
-            'height'      => 110,
-            'width'       => 570,
-            'flex-width'  => true,
-            'flex-height' => true,
+                'height'               => $logo_height,
+                'width'                => $logo_width,
+                'flex-width'           => true,
+                'flex-height'          => true,
+                'unlink-homepage-logo' => true,
             )
         );
+
+        /*
+        * Adds starter content to highlight the theme on fresh sites.
+        * This is done conditionally to avoid loading the starter content on every
+        * page load, as it is a one-off operation only needed once in the customizer.
+        */
+        if ( is_customize_preview() ) {
+            require URESTAURANT_INC_DIR . 'starter-content.php';
+            add_theme_support( 'starter-content', urestaurant_get_starter_content() );
+        }
     }
 endif;
 
@@ -209,11 +221,6 @@ require URESTAURANT_INC_DIR . 'core/theme-utilities.php';
  */
 require URESTAURANT_INC_DIR . 'core/theme-scripts.php';
 
-/**
- * Implement the Custom Header feature.
- */
-require URESTAURANT_INC_DIR . 'custom-header.php';
-
 /*
  * Custom template tags for this theme.
  */
@@ -244,19 +251,6 @@ require_once URESTAURANT_INC_DIR . 'acf/menu.php';
 require_once URESTAURANT_INC_DIR . 'acf/location.php';
 require_once URESTAURANT_INC_DIR . 'acf/contact.php';
 
-/*
- * Import demo page
- */
-if (is_admin()) {
-    include_once URESTAURANT_INC_DIR . 'import/import-demo-page.php';
-}
-
-/*
- * Load Jetpack compatibility file.
- */
-if (defined('JETPACK__VERSION')) {
-    include URESTAURANT_INC_DIR() . 'jetpack.php';
-}
 
 /**
  * Register google map api key for ACF
@@ -280,45 +274,3 @@ function urestaurant_google_map_api( $api ) {
 }
 
 add_filter('acf/fields/google_map/api', 'urestaurant_google_map_api');
-
-/**
- * Hide some acf custom fields for certain templates.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function urestaurant_acf_conditional_fields() {
-    $template_name = urestaurant_get_active_theme_template();
-    ?>
-    <script type="text/javascript">
-        jQuery(document).ready(function(){
-            var template = "<?php echo $template_name ?>";
-            // Hide home about subtitle field for minimal and colorful template.
-            if('minimal'===template || 'colorful'===template){
-                jQuery('.acf-field-home5f4bc27e5f2a4').hide();
-            }
-
-            // Hide about about subtitle field for minimal template.
-            if('minimal'===template){
-                jQuery('.acf-field-about5f4979537be66').hide();
-            }
-
-            // Hide about promo video title and content. for minimal and colorful templates.
-            if('minimal'===template || 'colorful'===template){
-                jQuery('.acf-field-about5f497c5bcd95b').hide();
-                jQuery('.acf-field-about5f497ec8fa1e7').hide();
-            }
-
-            // Hide about about2 section. for bold and fancy templates.
-            if('bold'===template || 'fancy'===template){
-                jQuery('.acf-field-about5f1a0975acc17').hide();
-                jQuery('.acf-field-about5f1a099eacc18').hide();
-                jQuery('.acf-field-about5f1a0964acc16').hide();
-            }
-        });
-    </script>
-    <?php
-}
-
-add_action('acf/input/admin_head', 'urestaurant_acf_conditional_fields');

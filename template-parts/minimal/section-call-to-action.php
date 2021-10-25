@@ -8,10 +8,12 @@
  * @author  PriceListo
  */
 
-global $ultimate_restaurant_settings
+global $ultimate_restaurant_settings;
+
+$cta_background = isset( $ultimate_restaurant_settings['cta-background'] ) && isset( $ultimate_restaurant_settings['cta-background']['background-image'] ) ? $ultimate_restaurant_settings['cta-background']['background-image'] : URESTAURANT_IMAGES_DIR_URI . 'call-to-action.png';
 ?>
 
-<section class="cta_wrap v1" style="background-image: url(<?php echo esc_url( $ultimate_restaurant_settings['cta-background']['background-image'] ); ?>);">
+<section class="cta_wrap v1" style="background-image: url(<?php echo esc_url( $cta_background ); ?>);">
     <div class="overlay v1"></div>
     <div class="container">
         <div class="row">
@@ -40,7 +42,9 @@ global $ultimate_restaurant_settings
                                 <a href="mailto:<?php echo esc_attr( $ultimate_restaurant_settings['email'] ); ?>"><?php echo esc_html( $ultimate_restaurant_settings['email'] ); ?></a>
                             </div>
                         <?php endif; ?>
-                        <button type="submit" class="btn v1">make reservation</button>
+                        <?php if(isset($ultimate_restaurant_settings) && isset($ultimate_restaurant_settings['show-reservation-button']) && '1' === $ultimate_restaurant_settings['show-reservation-button'] ) : ?>
+                            <a href="<?php echo esc_url($ultimate_restaurant_settings['reservation-button-url']); ?>" class="btn v1"><?php esc_html_e( 'make reservation', 'urestaurant' ) ?></a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

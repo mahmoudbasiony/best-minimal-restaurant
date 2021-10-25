@@ -29,8 +29,8 @@ function urestaurant_global_theme_js() {
 
     wp_enqueue_script('bootstrap', $dir . 'third/bootstrap.min.js', array('jquery'), $theme_version, true);
     wp_enqueue_script('easing', $dir . 'third/jquery.easing.min.js', array('jquery'), $theme_version, true);
-    wp_enqueue_script('nice-select', $dir . 'third/jquery-nice-select.js', array('jquery'), $theme_version, true);
-    wp_enqueue_script('magnific-popup', $dir . 'third/jquery.magnific-popup.js', array('jquery'), $theme_version, true);
+    wp_enqueue_script('nice-select', $dir . 'third/jquery.nice-select.min.js', array('jquery'), $theme_version, true);
+    wp_enqueue_script('magnific-popup', $dir . 'third/jquery.magnific-popup.min.js', array('jquery'), $theme_version, true);
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -39,6 +39,32 @@ function urestaurant_global_theme_js() {
     wp_enqueue_script('urestaurant-main', $dir . 'main.js', array('jquery'), $theme_version, true);
 }
 add_action('wp_enqueue_scripts', 'urestaurant_global_theme_js');
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function urestaurant_skip_link_focus_fix() {
+
+	// If SCRIPT_DEBUG is defined and true, print the unminified file.
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+		echo '<script>';
+		include URESTAURANT_JS_DIR_URI . 'skip-link-focus-fix.js';
+		echo '</script>';
+	}
+
+	// The following is minified via `npx terser --compress --mangle -- assets/js/skip-link-focus-fix.js`.
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",(function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())}),!1);
+	</script>
+	<?php
+}
+add_action( 'wp_print_footer_scripts', 'urestaurant_skip_link_focus_fix' );
 
 /**
  * Global css needed for the front-end.
@@ -100,13 +126,6 @@ function urestaurant_target_theme_css() {
 function urestaurant_theme_fonts_url() {
     // Initialize font family array
     $font_families = array();
-
-    // Get current active theme template
-    $active_theme = urestaurant_get_active_theme_template();
-
-    if ('fancy' === $active_theme) {
-        $font_families[] = 'Literata:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap';
-    }
 
     $font_families[] = 'Nunito:wght@300;400;600;700;800;900&display=swap';
 

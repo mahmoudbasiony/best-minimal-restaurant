@@ -13,29 +13,37 @@
  * @author  PriceListo
  */
 
-urestaurant_get_header();
+get_header();
+
 ?>
 
     <main id="primary" class="site-main">
+        <section class="latest_post_wrap v1"></section>
 
-        <?php
-        if ( have_posts() ) :
+        <div id="primary site-content" class="content-area">
+            <?php
+            if ( have_posts() ) :
 
-            /* Start the Loop */
-            while ( have_posts() ) :
-                the_post();
+                /* Start the Loop */
+                while ( have_posts() ) :
 
-            endwhile;
+                    the_post();
+                    get_template_part( 'template-parts/content'  );
+                endwhile;
 
-        else :
+                // Previous/next page navigation.
+                urestaurant_the_posts_navigation();
 
-            get_template_part( 'template-parts/content', 'none' );
+            else :
 
-        endif;
-        ?>
+                get_template_part( 'template-parts/content', 'none' );
+
+            endif;
+            ?>
+        </div>
 
     </main><!-- #main -->
 
 <?php
-get_sidebar();
-urestaurant_get_footer();
+
+get_footer();

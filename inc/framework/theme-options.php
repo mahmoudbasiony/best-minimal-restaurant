@@ -153,34 +153,6 @@ Redux::setArgs( $opt_name, $args );
  * @access public
  */
 
-/*********************************
- *          General
- */
-Redux::setSection(
-    $opt_name,
-    array(
-        'title'            => esc_html__( 'General', 'urestaurant' ),
-        'id'               => 'general',
-        'customizer_width' => '400px',
-        'desc'             => esc_html__( 'Theme General Options!', 'urestaurant' ),
-        'icon'             => 'el el-home',
-        'fields'           => array(
-            array(
-                'id'       => 'ultimate-restaurant-theme',
-                'type'     => 'select',
-                'title'    => esc_html__( 'Select Theme', 'urestaurant' ),
-                // Must provide key => value pairs for select options
-                'options'  => array(
-                    'minimal'  => 'Minimal',
-                    'bold'     => 'Bold',
-                    'colorful' => 'Colorful',
-                    'fancy'    => 'Fancy',
-                ),
-                'default'  => 'minimal',
-            ),
-        ),
-    ) 
-);
 
 /*********************************
  *          HEADER
@@ -190,59 +162,21 @@ Redux::setSection(
     array(
         'title'            => esc_html__( 'Header', 'urestaurant' ),
         'id'               => 'header',
-        'customizer_width' => '500px',
-    )
-);
-
-/*********************************
- *          LOGO - SUBSECTION
-*/
-Redux::setSection(
-    $opt_name,
-    array(
-        'title'            => esc_html__( 'Logo', 'urestaurant' ),
-        'id'               => 'logo',
         'customizer_width' => '400px',
-        'subsection'       => true,
         'fields'           => array(
             array(
-                'id'            => 'logo-max-width',
-                'type'          => 'slider',
-                'title'         => esc_html__( 'Logo Max Width(px)', 'urestaurant' ),
-                'default'       => 300,
-                'min'           => 20,
-                'step'          => 10,
-                'max'           => 440,
+                'id'       => 'show-reservation-button',
+                'type'     => 'checkbox',
+                'title'    => esc_html__( 'Show reservation button', 'urestaurant' ),
+                'subtitle' => esc_html__( 'Show reservation button in main header!', 'urestaurant'),
+                'default'  => '1',
             ),
-            array(
-                'id'            => 'logo-max-height',
-                'type'          => 'slider',
-                'title'         => esc_html__( 'Logo Max Height(px)', 'urestaurant' ),
-                'default'       => 65,
-                'min'           => 10,
-                'step'          => 5,
-                'max'           => 140,
-            ),
-        ),
-    )
-);
-
-/*********************************
- *          RESERVATION BUTTON - SUBSECTION
-*/
-Redux::setSection(
-    $opt_name,
-    array(
-        'title'            => esc_html__( 'Reservation Button', 'urestaurant' ),
-        'id'               => 'reservation-button',
-        'customizer_width' => '400px',
-        'subsection'       => true,
-        'fields'           => array(
             array(
                 'id'            => 'reservation-button-text',
                 'type'          => 'text',
                 'title'         => esc_html__( 'Reservation Button Text', 'urestaurant' ),
                 'default'       => esc_html__( 'Reservation', 'urestaurant' ),
+                'required'      => array( 'show-reservation-button', 'equals', '1' ),
             ),
             array(
                 'id'            => 'reservation-button-url',
@@ -250,38 +184,7 @@ Redux::setSection(
                 'title'         => esc_html__( 'Reservation Button Link', 'urestaurant' ),
                 'desc'          => esc_html__( 'Leave it empty to hide.', 'urestaurant' ),
                 'default'       => '#',
-            ),
-        ),
-    )
-);
-
-/*********************************
- *          SOCIAL ICONS
-*/
-Redux::setSection(
-    $opt_name,
-    array(
-        'title'            => esc_html__( 'Social Icons', 'urestaurant' ),
-        'id'               => 'social-icons',
-        'customizer_width' => '400px',
-        'fields'           => array(
-            array(
-                'id'       => 'facebook',
-                'type'     => 'text',
-                'title'    => esc_html__( 'Facebook', 'urestaurant' ),
-                'default'  => '',
-            ),
-            array(
-                'id'       => 'twitter',
-                'type'     => 'text',
-                'title'    => esc_html__( 'Twitter', 'urestaurant' ),
-                'default'  => '',
-            ),
-            array(
-                'id'       => 'instagram',
-                'type'     => 'text',
-                'title'    => esc_html__( 'Instagram', 'urestaurant' ),
-                'default'  => '',
+                'required'      => array( 'show-reservation-button', 'equals', '1' ),
             ),
         ),
     )
@@ -385,8 +288,30 @@ Redux::setSection(
             array(
                 'id'       => 'show-social-icons',
                 'type'     => 'checkbox',
-                'title'    => esc_html__( 'Displays footer social icons', 'urestaurant' ),
+                'title'    => esc_html__( 'Show social icons', 'urestaurant' ),
+                'subtitle' => esc_html__( 'Show social icons in main footer!', 'urestaurant' ),
                 'default'  => '1',
+            ),
+            array(
+                'id'       => 'facebook',
+                'type'     => 'text',
+                'title'    => esc_html__( 'Facebook', 'urestaurant' ),
+                'default'  => '',
+                'required' => array( 'show-social-icons', 'equals', '1' ),
+            ),
+            array(
+                'id'       => 'twitter',
+                'type'     => 'text',
+                'title'    => esc_html__( 'Twitter', 'urestaurant' ),
+                'default'  => '',
+                'required' => array( 'show-social-icons', 'equals', '1' ),
+            ),
+            array(
+                'id'       => 'instagram',
+                'type'     => 'text',
+                'title'    => esc_html__( 'Instagram', 'urestaurant' ),
+                'default'  => '',
+                'required' => array( 'show-social-icons', 'equals', '1' ),
             ),
         ),
     )

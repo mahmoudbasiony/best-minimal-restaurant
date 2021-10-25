@@ -91,7 +91,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'max_height'        => '',
                     'max_size'          => '',
                     'mime_types'        => '',
-                    'default_value'     => '',
+                    'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-homepage-banner' ),
                 ),
                 array(
                     'key'               => 'field_home5f18cfeb87b96',
@@ -178,6 +178,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'max_height'        => '',
                     'max_size'          => '',
                     'mime_types'        => '',
+                    'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-homepage-about-background' ),
                 ),
                 array(
                     'key'               => 'field_home5f18d9be35aef',
@@ -197,25 +198,6 @@ if (function_exists('acf_add_local_field_group')) :
                     'prepend'           => '',
                     'append'            => '',
                     'maxlength'         => '',
-                ),
-                array(
-                    'key' => 'field_home5f4bc27e5f2a4',
-                    'label' => 'Subtitle',
-                    'name' => 'subtitle-about',
-                    'type' => 'text',
-                    'instructions' => '',
-                    'required' => 0,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => '',
-                    'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                    'maxlength' => '',
                 ),
                 array(
                     'key'               => 'field_home5f18d9de35af0',
@@ -320,6 +302,7 @@ if (function_exists('acf_add_local_field_group')) :
                     'max_height'        => '',
                     'max_size'          => '',
                     'mime_types'        => '',
+                    'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-homepage-feature-background' ),
                 ),
                 array(
                     'key'               => 'field_home5f18df472b5af',
@@ -529,6 +512,7 @@ if (function_exists('acf_add_local_field_group')) :
                             'max_height'        => '',
                             'max_size'          => '',
                             'mime_types'        => '',
+                            'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-homepage-food-cat-1' ),
                         ),
                         array(
                             'key'               => 'field_home5f190068af32f',
@@ -604,6 +588,7 @@ if (function_exists('acf_add_local_field_group')) :
                             'max_height'        => '',
                             'max_size'          => '',
                             'mime_types'        => '',
+                            'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-homepage-food-cat-2' ),
                         ),
                         array(
                             'key'               => 'field_home5f1900b3af330',
@@ -679,6 +664,7 @@ if (function_exists('acf_add_local_field_group')) :
                             'max_height'        => '',
                             'max_size'          => '',
                             'mime_types'        => '',
+                            'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-homepage-food-cat-3' ),
                         ),
                         array(
                             'key'               => 'field_home5f1900c8af331',
@@ -754,6 +740,7 @@ if (function_exists('acf_add_local_field_group')) :
                             'max_height'        => '',
                             'max_size'          => '',
                             'mime_types'        => '',
+                            'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-homepage-food-cat-4' ),
                         ),
                         array(
                             'key'               => 'field_home5f1900e6af333',
@@ -779,7 +766,7 @@ if (function_exists('acf_add_local_field_group')) :
                     array(
                         'param'    => 'page_template',
                         'operator' => '==',
-                        'value'    => 'page-home.php',
+                        'value'    => 'template-home.php',
                     ),
                 ),
         ),

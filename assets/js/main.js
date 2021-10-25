@@ -61,10 +61,14 @@
 
             if ($('body').hasClass('offcanvas-menu')) {
                 $('body').removeClass('offcanvas-menu');
+                $('#site-content').show();
+                $('footer').show();
                 $this.removeClass('active');
             } else {
                 $('body').addClass('offcanvas-menu');
                 $this.addClass('active');
+                $('#site-content').hide();
+                $('footer').hide();
             }
         })
 

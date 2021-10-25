@@ -10,54 +10,35 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header">
-        <?php
-        if ( is_singular() ) :
-            the_title( '<h1 class="entry-title">', '</h1>' );
-        else :
-            the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-        endif;
+	<header class="entry-header">
+		<?php if ( is_singular() ) : ?>
+			<?php the_title( '<h1 class="entry-title default-max-width">', '</h1>' ); ?>
+		<?php else : ?>
+			<?php the_title( sprintf( '<h2 class="entry-title default-max-width"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php endif; ?>
 
-        if ( 'post' === get_post_type() ) :
-            ?>
-            <div class="entry-meta">
-                <?php
-                urestaurant_posted_on();
-                urestaurant_posted_by();
-                ?>
-            </div><!-- .entry-meta -->
-        <?php endif; ?>
-    </header><!-- .entry-header -->
+		<?php urestaurant_post_thumbnail(); ?>
+	</header><!-- .entry-header -->
 
-    <?php urestaurant_post_thumbnail(); ?>
+	<div class="entry-content">
+		<?php
+		the_content(
+			urestaurant_continue_reading_text()
+		);
 
-    <div class="entry-content">
-        <?php
-        the_content(
-            sprintf(
-                wp_kses(
-                    /* translators: %s: Name of current post. Only visible to screen readers */
-                    __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'urestaurant' ),
-                    array(
-                        'span' => array(
-                            'class' => array(),
-                        ),
-                    )
-                ),
-                wp_kses_post( get_the_title() )
-            )
-        );
+		wp_link_pages(
+			array(
+				'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
+				'after'    => '</nav>',
+				/* translators: %: Page number. */
+				'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
+			)
+		);
 
-        wp_link_pages(
-            array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'urestaurant' ),
-                'after'  => '</div>',
-            )
-        );
-        ?>
-    </div><!-- .entry-content -->
+		?>
+	</div><!-- .entry-content -->
 
-    <footer class="entry-footer">
-        <?php urestaurant_entry_footer(); ?>
-    </footer><!-- .entry-footer -->
+	<footer class="entry-footer default-max-width">
+		<?php urestaurant_entry_meta_footer(); ?>
+	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

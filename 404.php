@@ -8,10 +8,11 @@
  * @author  PriceListo
  */
 
-urestaurant_get_header();
+get_header();
 ?>
 
-    <main id="primary" class="site-main">
+        <main id="primary site-content" class="site-main">
+        <section class="latest_post_wrap v1"></section>
 
         <section class="error-404 not-found">
             <header class="page-header">
@@ -58,4 +59,4 @@ urestaurant_get_header();
     </main><!-- #main -->
 
 <?php
-urestaurant_get_footer();
+get_footer();
