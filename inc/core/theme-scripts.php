@@ -2,43 +2,43 @@
 /**
  * The core theme styles and scripts.
  *
- * @package Ultimate_Restaurant
+ * @package Best_Minimal_Restaurant
  * @author  PriceListo
  */
 
 /**
  * Global js needed for the front-end.
- * 
+ *
  * @since 1.0.0
  *
  * @return void
  */
-function urestaurant_global_theme_js() {
-    // Get js directory uri.
-    $dir = URESTAURANT_JS_DIR_URI;
+function best_minimal_restaurant_global_theme_js() {
+	// Get js directory uri.
+	$dir = BMR_MINIMAL_JS_DIR_URI;
 
-    // Get current theme version.
-    $theme_version = URESTAURANT_THEME_VERSION;
+	// Get current theme version.
+	$theme_version = BMR_MINIMAL_THEME_VERSION;
 
-    // Get google maps api key.
-    $google_map_api_key = urestaurant_get_google_map_api_key();
+	// Get google maps api key.
+	$google_map_api_key = best_minimal_restaurant_get_google_map_api_key();
 
-    if(isset($google_map_api_key)) {
-        wp_enqueue_script("google-map-api", "https://maps.googleapis.com/maps/api/js?key={$google_map_api_key}", array(), '', false);
-    }
+	if ( isset( $google_map_api_key ) ) {
+		wp_enqueue_script( 'google-map-api', "https://maps.googleapis.com/maps/api/js?key={$google_map_api_key}", array( 'jquery' ), $theme_version, false );
+	}
 
-    wp_enqueue_script('bootstrap', $dir . 'third/bootstrap.min.js', array('jquery'), $theme_version, true);
-    wp_enqueue_script('easing', $dir . 'third/jquery.easing.min.js', array('jquery'), $theme_version, true);
-    wp_enqueue_script('nice-select', $dir . 'third/jquery.nice-select.min.js', array('jquery'), $theme_version, true);
-    wp_enqueue_script('magnific-popup', $dir . 'third/jquery.magnific-popup.min.js', array('jquery'), $theme_version, true);
+	wp_enqueue_script( 'bootstrap', $dir . 'third/bootstrap.min.js', array( 'jquery' ), $theme_version, true );
+	wp_enqueue_script( 'easing', $dir . 'third/jquery.easing.min.js', array( 'jquery' ), $theme_version, true );
+	wp_enqueue_script( 'nice-select', $dir . 'third/jquery.nice-select.min.js', array( 'jquery' ), $theme_version, true );
+	wp_enqueue_script( 'magnific-popup', $dir . 'third/jquery.magnific-popup.min.js', array( 'jquery' ), $theme_version, true );
 
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
-    }
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 
-    wp_enqueue_script('urestaurant-main', $dir . 'main.js', array('jquery'), $theme_version, true);
+	wp_enqueue_script( 'best-minimal-restaurant-main', $dir . 'main.js', array( 'jquery' ), $theme_version, true );
 }
-add_action('wp_enqueue_scripts', 'urestaurant_global_theme_js');
+add_action( 'wp_enqueue_scripts', 'best_minimal_restaurant_global_theme_js' );
 
 /**
  * Fix skip link focus in IE11.
@@ -48,12 +48,12 @@ add_action('wp_enqueue_scripts', 'urestaurant_global_theme_js');
  *
  * @link https://git.io/vWdr2
  */
-function urestaurant_skip_link_focus_fix() {
+function best_minimal_restaurant_skip_link_focus_fix() {
 
 	// If SCRIPT_DEBUG is defined and true, print the unminified file.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		echo '<script>';
-		include URESTAURANT_JS_DIR_URI . 'skip-link-focus-fix.js';
+		include BMR_MINIMAL_JS_DIR_URI . 'skip-link-focus-fix.js';
 		echo '</script>';
 	}
 
@@ -64,7 +64,7 @@ function urestaurant_skip_link_focus_fix() {
 	</script>
 	<?php
 }
-add_action( 'wp_print_footer_scripts', 'urestaurant_skip_link_focus_fix' );
+add_action( 'wp_print_footer_scripts', 'best_minimal_restaurant_skip_link_focus_fix' );
 
 /**
  * Global css needed for the front-end.
@@ -73,27 +73,27 @@ add_action( 'wp_print_footer_scripts', 'urestaurant_skip_link_focus_fix' );
  *
  * @return void
  */
-function urestaurant_global_theme_css() {
-    // Get css directory uri.
-    $dir = URESTAURANT_CSS_DIR_URI;
+function best_minimal_restaurant_global_theme_css() {
+	// Get css directory uri.
+	$dir = BMR_MINIMAL_CSS_DIR_URI;
 
-    // Get current theme version.
-    $theme_version = URESTAURANT_THEME_VERSION;
+	// Get current theme version.
+	$theme_version = BMR_MINIMAL_THEME_VERSION;
 
-    wp_enqueue_style('urestaurant-google-fonts', urestaurant_theme_fonts_url(), false, $theme_version);
-    wp_enqueue_style('bootstrap', $dir . 'third/bootstrap.min.css', false, $theme_version);
-    wp_enqueue_style('animate', $dir . 'third/animate.min.css', false, $theme_version);
-    wp_enqueue_style('ionicons', $dir . 'third/ionicons.min.css', false, $theme_version);
-    wp_enqueue_style('nice-select', $dir . 'third/nice-select.min.css', false, $theme_version);
-    wp_enqueue_style('magnific-popup', $dir . 'third/magnific-popup.min.css', false, $theme_version);
+	wp_enqueue_style( 'best-minimal-restaurant-google-fonts', best_minimal_restaurant_theme_fonts_url(), false, $theme_version );
+	wp_enqueue_style( 'bootstrap', $dir . 'third/bootstrap.min.css', false, $theme_version );
+	wp_enqueue_style( 'animate', $dir . 'third/animate.min.css', false, $theme_version );
+	wp_enqueue_style( 'ionicons', $dir . 'third/ionicons.min.css', false, $theme_version );
+	wp_enqueue_style( 'nice-select', $dir . 'third/nice-select.min.css', false, $theme_version );
+	wp_enqueue_style( 'magnific-popup', $dir . 'third/magnific-popup.min.css', false, $theme_version );
 
-    // Target theme template css.
-    urestaurant_target_theme_css();
+	// Target theme template css.
+	best_minimal_restaurant_target_theme_css();
 
-    wp_enqueue_style('urestaurant-style', get_stylesheet_uri(), array(), $theme_version);
-    wp_style_add_data('urestaurant-style', 'rtl', 'replace');
+	wp_enqueue_style( 'best-minimal-restaurant-style', get_stylesheet_uri(), array(), $theme_version );
+	wp_style_add_data( 'best-minimal-restaurant-style', 'rtl', 'replace' );
 }
-add_action('wp_enqueue_scripts', 'urestaurant_global_theme_css');
+add_action( 'wp_enqueue_scripts', 'best_minimal_restaurant_global_theme_css' );
 
 /**
  * Target css for the current active theme template.
@@ -102,18 +102,18 @@ add_action('wp_enqueue_scripts', 'urestaurant_global_theme_css');
  *
  * @return void
  */
-function urestaurant_target_theme_css() {
-    // Get css directory uri.
-    $dir = URESTAURANT_CSS_DIR_URI;
+function best_minimal_restaurant_target_theme_css() {
+	// Get css directory uri.
+	$dir = BMR_MINIMAL_CSS_DIR_URI;
 
-    // Get current theme version.
-    $theme_version = URESTAURANT_THEME_VERSION;
+	// Get current theme version.
+	$theme_version = BMR_MINIMAL_THEME_VERSION;
 
-    // Get current active theme template
-    $active_theme = urestaurant_get_active_theme_template();
+	// Get current active theme template.
+	$active_theme = best_minimal_restaurant_get_active_theme_template();
 
-    wp_enqueue_style("urestaurant-{$active_theme}-main", $dir . "{$active_theme}-main.css", false, $theme_version);
-    wp_enqueue_style("urestaurant-{$active_theme}-responsive", $dir . "{$active_theme}-responsive.css", false, $theme_version);
+	wp_enqueue_style( "best-minimal-restaurant-{$active_theme}-main", $dir . "{$active_theme}-main.css", false, $theme_version );
+	wp_enqueue_style( "best-minimal-restaurant-{$active_theme}-responsive", $dir . "{$active_theme}-responsive.css", false, $theme_version );
 }
 
 /**
@@ -123,17 +123,19 @@ function urestaurant_target_theme_css() {
  *
  * @return string $fonts_url
  */
-function urestaurant_theme_fonts_url() {
-    // Initialize font family array
-    $font_families = array();
+function best_minimal_restaurant_theme_fonts_url() {
+	// Initialize font family array.
+	$font_families = array();
 
-    $font_families[] = 'Nunito:wght@300;400;600;700;800;900&display=swap';
+	$font_families[] = 'Nunito:wght@300;400;600;700;800;900&display=swap';
 
-    $font_families[] = 'Poppins:wght@300;400;500;600;700;800&display=swap';
+	$font_families[] = 'Poppins:wght@300;400;500;600;700;800&display=swap';
 
-    $query_args = array(
-        'family'  => implode('|', $font_families),
-    );
+	$query_args = array(
+		'family' => implode( '|', $font_families ),
+	);
 
-    return $fonts_url = esc_url(add_query_arg($query_args, 'https://fonts.googleapis.com/css'));
+	$fonts_url = esc_url( add_query_arg( $query_args, 'https://fonts.googleapis.com/css' ) );
+
+	return $fonts_url;
 }

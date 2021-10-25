@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Ultimate_Restaurant
+ * @package Best_Minimal_Restaurant
  * @author  PriceListo
  */
 

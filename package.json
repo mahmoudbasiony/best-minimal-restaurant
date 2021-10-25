@@ -1,5 +1,5 @@
 {
-  "name": "ultimate-restaurant",
+  "name": "best-minimal-restaurant",
   "version": "1.0.0",
   "description": "",
   "author": "PriceListo",
@@ -14,10 +14,10 @@
   "homepage": "https://pricelisto.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pricelisto/urestaurant/"
+    "url": "https://github.com/pricelisto/best-minimal-restaurant/"
   },
   "bugs": {
-    "url": "https://github.com/pricelisto/urestaurant/bugs"
+    "url": "https://github.com/pricelisto/best-minimal-restaurant/bugs"
   },
   "devDependencies": {
     "@wordpress/scripts": "^9.0.0",
@@ -45,7 +45,7 @@
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "dir-archiver --src . --dest ../urestaurant.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
+    "bundle": "dir-archiver --src . --dest ../best-minimal-restaurant.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
   },
   "dependencies": {
     "bootstrap": "^5.1.3",

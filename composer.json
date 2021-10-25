@@ -1,5 +1,5 @@
 {
-    "name": "pricelisto/ultimate-restaurant",
+    "name": "pricelisto/best-minimal-restaurant",
     "type": "wordpress-theme",
     "description": "",
     "keywords": [
@@ -18,21 +18,38 @@
         }
     ],
     "require": {
-        "php": ">=5.6"
+        "php": ">=5.6|>=8.0",
+		"composer/installers": "1.10.0",
+		"composer-plugin-api": "^1.0 || ^2.0"
     },
     "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-        "wptrt/wpthemereview": "^0.2.1",
-        "php-parallel-lint/php-parallel-lint": "^1.2.0",
-        "wp-cli/i18n-command": "^2.2.5"
-    },
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+		"kint-php/kint": "^3.3",
+		"phpcompatibility/phpcompatibility-wp": "^2.1.1",
+		"squizlabs/php_codesniffer": "^3.6.0",
+		"wp-coding-standards/wpcs": "^2.3.0"
+	},
+	"config": {
+		"sort-packages": true
+	},
     "scripts": {
-        "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
-        "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
-        "make-pot": "wp i18n make-pot . languages/urestaurant.pot"
+		"install-codestandards": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
+		"lint": [
+			"bin/php-lint",
+			"bin/xml-lint"
+			],
+		"phpcs-report": "phpcs . -s --colors --report=source --warning-severity=0 --ignore-annotations --extensions=php,html",
+		"phpcs": "phpcs . -s -p -d memory_limit=2048M --colors --warning-severity=0 --ignore-annotations --extensions=php,html",
+		"phpcbf": "phpcbf . -p -v -d memory_limit=2048M --ignore-annotations --extensions=php"
     },
+    "extra": {
+		"scripts-description": {
+			"phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
+			"phpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier"
+		}
+	},
     "support": {
-        "issues": "https://github.com/pricelisto/urestaurant/issues",
-        "source": "https://github.com/pricelisto/urestaurant"
+        "issues": "https://github.com/pricelisto/best-minimal-restaurant/issues",
+        "source": "https://github.com/pricelisto/best-minimal-restaurant"
     }
 }

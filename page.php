@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Ultimate_Restaurant
+ * @package Best_Minimal_Restaurant
  * @author  PriceListo
  */
 
@@ -17,28 +17,28 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-        <section class="latest_post_wrap v1"></section>
+		<section class="latest_post_wrap v1"></section>
 
-        <div id="primary site-content" class="content-area">
-            <?php
-            if ( have_posts() ) :
+		<div id="primary site-content" class="content-area">
+			<?php
+			if ( have_posts() ) :
 
-                /* Start the Loop */
-                while ( have_posts() ) :
+				/* Start the Loop */
+				while ( have_posts() ) :
 
-                    the_post();
-                    get_template_part( 'template-parts/content'  );
-                endwhile;
+					the_post();
+					get_template_part( 'template-parts/content' );
+				endwhile;
 
-            else :
+			else :
 
-                get_template_part( 'template-parts/content', 'none' );
+				get_template_part( 'template-parts/content', 'none' );
 
-            endif;
-            ?>
-        </div>
+			endif;
+			?>
+		</div>
 
-    </main><!-- #main -->
+	</main><!-- #main -->
 
 <?php
 get_footer();

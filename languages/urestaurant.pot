@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Restaurant 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/urestaurant\n"
+"Project-Id-Version: Best Minimal Restaurant 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/best-minimal-restaurant\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,14 +12,14 @@ msgstr ""
 "POT-Creation-Date: 2020-10-13T14:02:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
-"X-Domain: urestaurant\n"
+"X-Domain: best-minimal-restaurant\n"
 
 #. Theme Name of the theme
-msgid "Ultimate Restaurant"
+msgid "Best Minimal Restaurant"
 msgstr ""
 
 #. Description of the theme
-msgid "Ultimate restaurant is one of the easiest to use restaurant themes. It is a 4-in-1 restaurant theme with 4 different templates to choose from. Simply install the theme, select the template, import demo data, and edit content."
+msgid "Best Minimal restaurant is one of the easiest to use restaurant themes. It is a 4-in-1 restaurant theme with 4 different templates to choose from. Simply install the theme, select the template, import demo data, and edit content."
 msgstr ""
 
 #. Author of the theme

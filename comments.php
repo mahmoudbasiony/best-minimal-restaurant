@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Ultimate_Restaurant
+ * @package Best_Minimal_Restaurant
  */
 
 /*
@@ -19,7 +19,7 @@ if ( post_password_required() ) {
 	return;
 }
 
-$urestaurant_comment_count = get_comments_number();
+$best_minimal_restaurant_comment_count = get_comments_number();
 ?>
 
 <div id="comments" class="comments-area default-max-width <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>">
@@ -29,14 +29,14 @@ $urestaurant_comment_count = get_comments_number();
 		;
 		?>
 		<h2 class="comments-title">
-			<?php if ( '1' === $urestaurant_comment_count ) : ?>
-				<?php esc_html_e( '1 comment', 'urestaurant' ); ?>
+			<?php if ( '1' === $best_minimal_restaurant_comment_count ) : ?>
+				<?php esc_html_e( '1 comment', 'best-minimal-restaurant' ); ?>
 			<?php else : ?>
 				<?php
 				printf(
 					/* translators: %s: Comment count number. */
-					esc_html( _nx( '%s comment', '%s comments', $urestaurant_comment_count, 'Comments title', 'urestaurant' ) ),
-					esc_html( number_format_i18n( $urestaurant_comment_count ) )
+					esc_html( _nx( '%s comment', '%s comments', $best_minimal_restaurant_comment_count, 'Comments title', 'best-minimal-restaurant' ) ),
+					esc_html( number_format_i18n( $best_minimal_restaurant_comment_count ) )
 				);
 				?>
 			<?php endif; ?>
@@ -57,24 +57,24 @@ $urestaurant_comment_count = get_comments_number();
 		<?php
 		the_comments_pagination(
 			array(
-				'before_page_number' => esc_html__( 'Page', 'urestaurant' ) . ' ',
+				'before_page_number' => esc_html__( 'Page', 'best-minimal-restaurant' ) . ' ',
 				'mid_size'           => 0,
 				'prev_text'          => sprintf(
 					'%s <span class="nav-prev-text">%s</span>',
-					is_rtl() ? urestaurant_get_icon_svg( 'arrow_right' ) : urestaurant_get_icon_svg( 'arrow_left' ),
-					esc_html__( 'Older comments', 'urestaurant' )
+					is_rtl() ? best_minimal_restaurant_get_icon_svg( 'arrow_right' ) : best_minimal_restaurant_get_icon_svg( 'arrow_left' ),
+					esc_html__( 'Older comments', 'best-minimal-restaurant' )
 				),
 				'next_text'          => sprintf(
 					'<span class="nav-next-text">%s</span> %s',
-					esc_html__( 'Newer comments', 'urestaurant' ),
-					is_rtl() ? urestaurant_get_icon_svg( 'arrow_left' ) : urestaurant_get_icon_svg( 'arrow_right' )
+					esc_html__( 'Newer comments', 'best-minimal-restaurant' ),
+					is_rtl() ? best_minimal_restaurant_get_icon_svg( 'arrow_left' ) : best_minimal_restaurant_get_icon_svg( 'arrow_right' )
 				),
 			)
 		);
 		?>
 
 		<?php if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'urestaurant' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'best-minimal-restaurant' ); ?></p>
 		<?php endif; ?>
 	<?php endif; ?>
 
@@ -82,7 +82,7 @@ $urestaurant_comment_count = get_comments_number();
 	comment_form(
 		array(
 			'logged_in_as'       => null,
-			'title_reply'        => esc_html__( 'Leave a comment', 'urestaurant' ),
+			'title_reply'        => esc_html__( 'Leave a comment', 'best-minimal-restaurant' ),
 			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 			'title_reply_after'  => '</h2>',
 		)
