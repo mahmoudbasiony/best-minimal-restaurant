@@ -71,7 +71,7 @@ if ( ! function_exists( 'best_minimal_restaurant_get_permalink_by_id' ) ) {
 	}
 }
 
-if ( ! function_exists( 'urestaurany_get_attachment_url_by_title' ) ) {
+if ( ! function_exists( 'best_minimal_restaurant_get_attachment_url_by_title' ) ) {
 	/**
 	 * Get the attachment url by post title.
 	 *
@@ -81,7 +81,7 @@ if ( ! function_exists( 'urestaurany_get_attachment_url_by_title' ) ) {
 	 *
 	 * @return string The attachemnt url.
 	 */
-	function urestaurany_get_attachment_url_by_title( $title ) {
+	function best_minimal_restaurant_get_attachment_url_by_title( $title ) {
 		$args    = array(
 			'post_type'      => 'attachment',
 			'title'          => sanitize_title( $title ),
@@ -94,7 +94,7 @@ if ( ! function_exists( 'urestaurany_get_attachment_url_by_title' ) ) {
 	}
 }
 
-if ( ! function_exists( 'urestaurany_get_attachment_id_by_name' ) ) {
+if ( ! function_exists( 'best_minimal_restaurant_get_attachment_id_by_name' ) ) {
 	/**
 	 * Get the attachment ID by post name.
 	 *
@@ -104,7 +104,7 @@ if ( ! function_exists( 'urestaurany_get_attachment_id_by_name' ) ) {
 	 *
 	 * @return int|string The attachemnt ID or empty string if not found.
 	 */
-	function urestaurany_get_attachment_id_by_name( $name ) {
+	function best_minimal_restaurant_get_attachment_id_by_name( $name ) {
 		$args       = array(
 			'post_type'      => 'attachment',
 			'name'           => sanitize_title( $name ),

@@ -42,10 +42,14 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Best Minimal Restaurant is also based on:
+Best Minimal Restaurant bundles the following third-party resources:
 
 Underscores https://underscores.me/, Copyright (C) 2012-2021 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+TGM-Plugin-Activation, Copyright 2011, Thomas Griffin
+License: GPLv2 or later
+Source: http://tgmpluginactivation.com
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
@@ -74,7 +78,14 @@ jQuery Easing, Copyright 2008 George McGinley Smith [BSD]
 Source: https://github.com/gdsmith/jquery.easing/
 License: [BSD](https://github.com/gdsmith/jquery.easing/blob/master/LICENSE-BSD-3-Clause.txt)
 
-Images
+Images:
 
+Image for theme screenshot, Copyright {copyright here}
+License: {license here}
+Source: {source url here}
+
+Starter content images, Copyright {copyright here}
+License: {license here}
+Source: {source url here}
 
 

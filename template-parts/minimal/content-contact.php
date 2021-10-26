@@ -62,7 +62,7 @@ $visible_sections = apply_filters( 'best_minimal_restaurant_contact_visible_sect
 							<div class="contact_info_box">
 								<?php if ( $contact_info['phone-image'] ) : ?>
 									<img src="<?php echo esc_url( $contact_info['phone-image']['url'] ); ?>" alt="<?php echo esc_attr( $contact_info['phone-image']['alt'] ); ?>">
-								<?php else: ?>
+								<?php else : ?>
 									<img src="<?php echo esc_url( BMR_MINIMAL_IMAGES_DIR_URI . 'phone.png' ); ?>" />
 								<?php endif; ?>
 								<?php if ( $contact_info['phone'] ) : ?>
@@ -72,7 +72,7 @@ $visible_sections = apply_filters( 'best_minimal_restaurant_contact_visible_sect
 							<div class="contact_info_box">
 								<?php if ( $contact_info['email-image'] ) : ?>
 									<img src="<?php echo esc_url( $contact_info['email-image']['url'] ); ?>" alt="<?php echo esc_attr( $contact_info['email-image']['alt'] ); ?>">
-								<?php else: ?>
+								<?php else : ?>
 									<img src="<?php echo esc_url( BMR_MINIMAL_IMAGES_DIR_URI . 'mail.png' ); ?>" />
 								<?php endif; ?>
 								<?php if ( $contact_info['email'] ) : ?>
@@ -82,7 +82,7 @@ $visible_sections = apply_filters( 'best_minimal_restaurant_contact_visible_sect
 							<div class="contact_info_box">
 								<?php if ( $contact_info['location-image'] ) : ?>
 									<img src="<?php echo esc_url( $contact_info['location-image']['url'] ); ?>" alt="<?php echo esc_attr( $contact_info['location-image']['alt'] ); ?>">
-								<?php else: ?>
+								<?php else : ?>
 									<img src="<?php echo esc_url( BMR_MINIMAL_IMAGES_DIR_URI . 'map.png' ); ?>" />
 								<?php endif; ?>
 								<?php if ( $contact_info['location'] ) : ?>

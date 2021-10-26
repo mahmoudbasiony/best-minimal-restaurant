@@ -87,7 +87,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 					'max_height'        => '',
 					'max_size'          => '',
 					'mime_types'        => '',
-					'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-menupage-breadcrumb-background' ),
+					'default_value'     => best_minimal_restaurant_get_attachment_id_by_name( 'best-minimal-menupage-breadcrumb-background' ),
 				),
 				array(
 					'key'               => 'field_menu5f1a0c95c3129',
@@ -155,7 +155,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 					'max_height'        => '',
 					'max_size'          => '',
 					'mime_types'        => '',
-					'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-menupage-menu-section' ),
+					'default_value'     => best_minimal_restaurant_get_attachment_id_by_name( 'best-minimal-menupage-menu-section' ),
 				),
 				array(
 					'key'               => 'field_menu5f1a0cedc312b',
@@ -208,7 +208,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 						'class' => '',
 						'id'    => '',
 					),
-					'default_value'     => '[brm_restaurant_menu]',
+					'default_value'     => '[brm_restaurant_menu view="minimalist"]',
 					'placeholder'       => '',
 					'prepend'           => '',
 					'append'            => '',

@@ -77,7 +77,7 @@ $visible_sections = apply_filters( 'best_minimal_restaurant_about_visible_sectio
 			if ( get_field( 'about-promo-video' ) ) :
 				$url = get_field( 'about-promo-video', false, false );
 				?>
-				<a href="<?php echo esc_url( $url ); ?>" class="play_btn hvr-ripple-out"><img src="<?php echo esc_url( urestaurany_get_attachment_url_by_title( "{$template_name}-play" ) ); ?>" alt="Image"></a>
+				<a href="<?php echo esc_url( $url ); ?>" class="play_btn hvr-ripple-out"><img src="<?php echo esc_url( best_minimal_restaurant_get_attachment_url_by_title( "{$template_name}-play" ) ); ?>" alt="Image"></a>
 			<?php endif; ?>
 		</div>
 	</section>

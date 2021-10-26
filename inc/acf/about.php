@@ -91,7 +91,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 					'max_height'        => '',
 					'max_size'          => '',
 					'mime_types'        => '',
-					'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-aboutpage-breadcrumb-background' ),
+					'default_value'     => best_minimal_restaurant_get_attachment_id_by_name( 'best-minimal-aboutpage-breadcrumb-background' ),
 				),
 				array(
 					'key'               => 'field_about5f19c267e535e',
@@ -159,7 +159,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 					'max_height'        => '',
 					'max_size'          => '',
 					'mime_types'        => '',
-					'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-aboutpage-about-section' ),
+					'default_value'     => best_minimal_restaurant_get_attachment_id_by_name( 'best-minimal-aboutpage-about-section' ),
 				),
 				array(
 					'key'               => 'field_about5f19e39ae5361',
@@ -248,7 +248,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 					'max_height'        => '',
 					'max_size'          => '',
 					'mime_types'        => '',
-					'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-aboutpage-video-section' ),
+					'default_value'     => best_minimal_restaurant_get_attachment_id_by_name( 'best-minimal-aboutpage-video-section' ),
 				),
 				array(
 					'key'               => 'field_about5f19e434e5364',
@@ -351,7 +351,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 					'max_height'        => '',
 					'max_size'          => '',
 					'mime_types'        => '',
-					'default_value'     => urestaurany_get_attachment_id_by_name( 'urest-minimal-aboutpage-about2-section' ),
+					'default_value'     => best_minimal_restaurant_get_attachment_id_by_name( 'best-minimal-aboutpage-about2-section' ),
 				),
 			),
 			'location'              => array(
