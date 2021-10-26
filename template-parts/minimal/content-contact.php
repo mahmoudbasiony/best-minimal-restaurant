@@ -101,7 +101,7 @@ $visible_sections = apply_filters( 'best_minimal_restaurant_contact_visible_sect
 <!-- Contact form starts -->
 <?php if ( apply_filters( 'best_minimal_restaurant_contact_show_contact_form_section', in_array( 'contact-form', $visible_sections ) ) ) : ?>
 	<section class="contact_form_wrap" style="background-image: url(<?php get_field( 'contact-form-background' ) ? esc_url( the_field( 'contact-form-background' ) ) : ''; ?>);">
-		<img src="<?php echo esc_url( urestaurany_get_attachment_url_by_title( "{$template_name}-mail_shape" ) ); ?>" alt="image" class="abs_img_3">
+		<img src="<?php echo esc_url( BMR_MINIMAL_IMAGES_DIR_URI . 'mail_shape.png' ); ?>" alt="image" class="abs_img_3">
 		<div class="overlay v1"></div>
 
 		<div class="container">

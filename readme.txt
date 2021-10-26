@@ -24,7 +24,7 @@ Best Minimal restaurant is one of the easiest to use restaurant themes. It is a 
 
 == Changelog ==
 
-= 1.0.0 - Oct 25 2021 =
+= 1.0.0 - Oct 26 2021 =
 * Initial release
 
 == Copyright ==
@@ -73,5 +73,8 @@ License: [MIT](http://opensource.org/licenses/MIT)
 jQuery Easing, Copyright 2008 George McGinley Smith [BSD]
 Source: https://github.com/gdsmith/jquery.easing/
 License: [BSD](https://github.com/gdsmith/jquery.easing/blob/master/LICENSE-BSD-3-Clause.txt)
+
+Images
+
 
 

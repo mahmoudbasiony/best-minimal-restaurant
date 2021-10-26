@@ -1620,11 +1620,59 @@ a:hover {
     color: #fff;
 }
 
-.contact_form .form-group {
-    margin-bottom: 30px;
+.wpcf7-form p {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    position: relative;
 }
 
-.contact_form .form-group input {
+.wpcf7-form p span:not(.wpcf7-not-valid-tip,.wpcf7-spinner) {
+    margin-bottom: 30px;
+
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.wpcf7-form p span:not(.wpcf7-not-valid-tip,.wpcf7-spinner):nth-last-child(4) {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.wpcf7-form input[type="submit"] {
+    left: 34%;
+    max-width: 100%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.wpcf7-form p span:nth-last-child(3),
+.wpcf7-form p span:last-of-type {
+
+}
+
+/* .wpcf7-form p span:last-of-type {
+    text-align: center;
+} */
+
+.wpcf7-form p input:not([type="submit"]) {
     width: 100%;
     height: 70px;
     padding: 10px 28px;
@@ -1632,7 +1680,15 @@ a:hover {
     color: #161618;
 }
 
-.contact_form .form-group textarea {
+.wpcf7-form p input:not([type="submit"]) {
+    width: 100%;
+    height: 70px;
+    padding: 10px 28px;
+    font-size: 22px;
+    color: #161618;
+}
+
+.wpcf7-form p textarea {
     width: 100%;
     height: 200px;
     padding: 20px 28px;
@@ -1640,14 +1696,44 @@ a:hover {
     color: #161618;
 }
 
-.contact_form .form-group input::placeholder,
-.contact_form .form-group textarea::placeholder {
+.page-template-template-contact .wpcf7-form p input[type="submit"] {
+    background: transparent;
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 28px;
+    border: 3px solid #fff;
+    border-radius: 0;
+    padding: 20px 100px 20px;
+    transition: 0.4s;
+    position: relative;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.page-template-template-contact .wpcf7-form p input[type="submit"]:hover,
+.page-template-template-contact .wpcf7-form p input[type="submit"]:focus {
+    background: #fff;
+    color: #333;
+    border-color: transparent;
+}
+
+.wpcf7-form p input:not([type="submit"])::placeholder,
+.wpcf7-form p textarea::placeholder {
     opacity: 1;
     color: #161618;
     font-weight: 600;
 }
 
-.address_select .address_dropdown {
+.wpcf7-form p select,
+.wpcf7-form p .nice-select {
     width: 100%;
     display: block;
     height: 70px;
@@ -1656,8 +1742,11 @@ a:hover {
     font-weight: 600;
     line-height: 40px;
     color: #000;
-    margin-bottom: 30px;
 
+}
+
+.page-template-template-contact .wpcf7-form .wpcf7-spinner {
+    margin-top: 25px;
 }
 
 .nice-select::after {
@@ -1700,7 +1789,7 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-.wpcf7-response-output {
+.page-template-template-contact .wpcf7-response-output {
     color: #fff;
 }
 

@@ -98,7 +98,9 @@
     /*---------------------------------
                  Nice select
       -----------------------------------*/
-    $('select').niceSelect();
+    $(document).ready(function() {
+        $('select').niceSelect();
+    });
 
     /*-------------------------------------
               Magnific Popup js
